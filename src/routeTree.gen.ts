@@ -9,38 +9,178 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as JoinRouteImport } from './routes/join'
+import { Route as ImpactRouteImport } from './routes/impact'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ResourcesScholarshipsRouteImport } from './routes/resources.scholarships'
+import { Route as ResourcesPeopleRouteImport } from './routes/resources.people'
+import { Route as ResourcesHackathonsRouteImport } from './routes/resources.hackathons'
 
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JoinRoute = JoinRouteImport.update({
+  id: '/join',
+  path: '/join',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpactRoute = ImpactRouteImport.update({
+  id: '/impact',
+  path: '/impact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResourcesScholarshipsRoute = ResourcesScholarshipsRouteImport.update({
+  id: '/scholarships',
+  path: '/scholarships',
+  getParentRoute: () => ResourcesRoute,
+} as any)
+const ResourcesPeopleRoute = ResourcesPeopleRouteImport.update({
+  id: '/people',
+  path: '/people',
+  getParentRoute: () => ResourcesRoute,
+} as any)
+const ResourcesHackathonsRoute = ResourcesHackathonsRouteImport.update({
+  id: '/hackathons',
+  path: '/hackathons',
+  getParentRoute: () => ResourcesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/impact': typeof ImpactRoute
+  '/join': typeof JoinRoute
+  '/resources': typeof ResourcesRouteWithChildren
+  '/resources/hackathons': typeof ResourcesHackathonsRoute
+  '/resources/people': typeof ResourcesPeopleRoute
+  '/resources/scholarships': typeof ResourcesScholarshipsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/impact': typeof ImpactRoute
+  '/join': typeof JoinRoute
+  '/resources': typeof ResourcesRouteWithChildren
+  '/resources/hackathons': typeof ResourcesHackathonsRoute
+  '/resources/people': typeof ResourcesPeopleRoute
+  '/resources/scholarships': typeof ResourcesScholarshipsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/impact': typeof ImpactRoute
+  '/join': typeof JoinRoute
+  '/resources': typeof ResourcesRouteWithChildren
+  '/resources/hackathons': typeof ResourcesHackathonsRoute
+  '/resources/people': typeof ResourcesPeopleRoute
+  '/resources/scholarships': typeof ResourcesScholarshipsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/impact'
+    | '/join'
+    | '/resources'
+    | '/resources/hackathons'
+    | '/resources/people'
+    | '/resources/scholarships'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/impact'
+    | '/join'
+    | '/resources'
+    | '/resources/hackathons'
+    | '/resources/people'
+    | '/resources/scholarships'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/impact'
+    | '/join'
+    | '/resources'
+    | '/resources/hackathons'
+    | '/resources/people'
+    | '/resources/scholarships'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  ImpactRoute: typeof ImpactRoute
+  JoinRoute: typeof JoinRoute
+  ResourcesRoute: typeof ResourcesRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/join': {
+      id: '/join'
+      path: '/join'
+      fullPath: '/join'
+      preLoaderRoute: typeof JoinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impact': {
+      id: '/impact'
+      path: '/impact'
+      fullPath: '/impact'
+      preLoaderRoute: typeof ImpactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +188,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/resources/scholarships': {
+      id: '/resources/scholarships'
+      path: '/scholarships'
+      fullPath: '/resources/scholarships'
+      preLoaderRoute: typeof ResourcesScholarshipsRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/resources/people': {
+      id: '/resources/people'
+      path: '/people'
+      fullPath: '/resources/people'
+      preLoaderRoute: typeof ResourcesPeopleRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/resources/hackathons': {
+      id: '/resources/hackathons'
+      path: '/hackathons'
+      fullPath: '/resources/hackathons'
+      preLoaderRoute: typeof ResourcesHackathonsRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
   }
 }
 
+interface ResourcesRouteChildren {
+  ResourcesHackathonsRoute: typeof ResourcesHackathonsRoute
+  ResourcesPeopleRoute: typeof ResourcesPeopleRoute
+  ResourcesScholarshipsRoute: typeof ResourcesScholarshipsRoute
+}
+
+const ResourcesRouteChildren: ResourcesRouteChildren = {
+  ResourcesHackathonsRoute: ResourcesHackathonsRoute,
+  ResourcesPeopleRoute: ResourcesPeopleRoute,
+  ResourcesScholarshipsRoute: ResourcesScholarshipsRoute,
+}
+
+const ResourcesRouteWithChildren = ResourcesRoute._addFileChildren(
+  ResourcesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  ImpactRoute: ImpactRoute,
+  JoinRoute: JoinRoute,
+  ResourcesRoute: ResourcesRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
