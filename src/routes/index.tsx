@@ -8,6 +8,8 @@ import { ArrowRight, Heart, Users, Sparkle } from "lucide-react";
 import { stats } from "@/data/stats";
 import { initiatives } from "@/data/initiatives";
 import { speakers, testimonials, partners } from "@/data/community";
+import { colleges } from "@/data/colleges";
+import heroBg from "@/assets/hero-bg.jpg";
 import community1 from "@/assets/community-1.jpg";
 import community2 from "@/assets/community-2.jpg";
 import community3 from "@/assets/community-3.jpg";
@@ -37,6 +39,15 @@ function HomePage() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32">
+        <div
+          className="absolute inset-0 -z-10 bg-cover bg-center opacity-90"
+          style={{ backgroundImage: `url(${heroBg})` }}
+          aria-hidden
+        />
+        <div
+          className="absolute inset-0 -z-10 bg-gradient-to-b from-background/30 via-background/50 to-background"
+          aria-hidden
+        />
         <GradientMesh />
         <Sparkles />
         <div className="container mx-auto max-w-6xl px-6 text-center">
