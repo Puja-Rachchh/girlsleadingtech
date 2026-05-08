@@ -247,6 +247,33 @@ function HomePage() {
         </div>
       </section>
 
+      {/* COLLEGES REACHED */}
+      <section className="relative py-20">
+        <div className="container mx-auto max-w-6xl px-6">
+          <SectionHeading
+            eyebrow="Reach"
+            title="1000+ campuses, one community."
+            description="A glimpse at the colleges where GLT members lead clubs, hackathons and chapters across India."
+          />
+          <div className="mt-14 flex flex-wrap justify-center gap-2">
+            {colleges.slice(0, 36).map((c, i) => (
+              <span
+                key={c}
+                className="rounded-full glass px-4 py-2 text-xs font-medium text-foreground/80 shadow-soft animate-fade-up"
+                style={{ animationDelay: `${(i % 18) * 0.04}s` }}
+              >
+                {c}
+              </span>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link to="/impact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline">
+              See all colleges <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* PARTNERS */}
       <section className="relative py-20">
         <div className="container mx-auto max-w-6xl px-6">
