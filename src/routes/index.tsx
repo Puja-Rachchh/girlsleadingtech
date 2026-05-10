@@ -1,15 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { GradientMesh, Sparkles } from "@/components/site/GradientMesh";
 import { GlassCard } from "@/components/site/GlassCard";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { StatCounter } from "@/components/site/StatCounter";
 import { Marquee } from "@/components/site/Marquee";
-import { ArrowRight, Heart, Users, Sparkle } from "lucide-react";
+import { ArrowRight, Heart, Users, Sparkle, Star, Flower2 } from "lucide-react";
 import { stats } from "@/data/stats";
 import { initiatives } from "@/data/initiatives";
 import { speakers, testimonials, partners } from "@/data/community";
 import { colleges } from "@/data/colleges";
-import heroBg from "@/assets/hero-bg.jpg";
 import community1 from "@/assets/community-1.jpg";
 import community2 from "@/assets/community-2.jpg";
 import community3 from "@/assets/community-3.jpg";
@@ -26,50 +24,62 @@ export const Route = createFileRoute("/")({
 });
 
 const galleryImages = [community1, community2, community3, community4, community1, community2];
-const initiativeColors: Record<string, string> = {
-  pink: "from-pink-300/60 to-pink-200/30",
-  lavender: "from-violet-300/60 to-violet-200/30",
-  peach: "from-orange-300/60 to-orange-200/30",
-  rose: "from-rose-300/60 to-rose-200/30",
-  violet: "from-purple-400/60 to-violet-200/30",
+
+const initiativeStyles: Record<string, { grad: string; ring: string; chip: string; emoji: string }> = {
+  pink:     { grad: "from-rose-400 via-pink-500 to-fuchsia-500",   ring: "ring-rose-300/50",     chip: "bg-rose-100 text-rose-700",         emoji: "🌸" },
+  lavender: { grad: "from-violet-400 via-fuchsia-500 to-pink-500", ring: "ring-violet-300/50",   chip: "bg-violet-100 text-violet-700",     emoji: "✨" },
+  peach:    { grad: "from-amber-300 via-orange-400 to-rose-500",   ring: "ring-orange-300/50",   chip: "bg-orange-100 text-orange-700",     emoji: "🧡" },
+  rose:     { grad: "from-pink-400 via-rose-500 to-red-500",       ring: "ring-pink-300/50",     chip: "bg-pink-100 text-pink-700",         emoji: "💖" },
+  violet:   { grad: "from-purple-500 via-fuchsia-500 to-pink-500", ring: "ring-purple-300/50",   chip: "bg-purple-100 text-purple-700",     emoji: "🔮" },
 };
+
+function HeroDecor() {
+  return (
+    <>
+      <div className="pointer-events-none absolute -left-32 top-10 h-[28rem] w-[28rem] rounded-full bg-[oklch(0.78_0.2_25_/_0.55)] blur-3xl animate-blob" />
+      <div className="pointer-events-none absolute -right-32 top-20 h-[30rem] w-[30rem] rounded-full bg-[oklch(0.7_0.22_350_/_0.5)] blur-3xl animate-blob" style={{ animationDelay: "3s" }} />
+      <div className="pointer-events-none absolute left-1/3 -bottom-20 h-[24rem] w-[24rem] rounded-full bg-[oklch(0.78_0.18_60_/_0.5)] blur-3xl animate-blob" style={{ animationDelay: "6s" }} />
+      <div className="pointer-events-none absolute inset-0 bg-grain opacity-50" />
+    </>
+  );
+}
 
 function HomePage() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32">
-        <div
-          className="absolute inset-0 -z-10 bg-cover bg-center opacity-90"
-          style={{ backgroundImage: `url(${heroBg})` }}
-          aria-hidden
-        />
-        <div
-          className="absolute inset-0 -z-10 bg-gradient-to-b from-background/30 via-background/50 to-background"
-          aria-hidden
-        />
-        <GradientMesh />
-        <Sparkles />
-        <div className="container mx-auto max-w-6xl px-6 text-center">
-          <span className="inline-flex items-center gap-2 rounded-full glass-strong px-4 py-2 text-xs font-semibold uppercase tracking-widest text-primary shadow-soft animate-fade-up">
+      {/* HERO — editorial, asymmetric, bold */}
+      <section className="relative isolate overflow-hidden pt-28 pb-24 md:pt-36 md:pb-32">
+        <HeroDecor />
+
+        {/* floating sparkles */}
+        <Star className="absolute left-[12%] top-32 h-5 w-5 -rotate-12 fill-current text-[oklch(0.7_0.2_25)] animate-shimmer" />
+        <Star className="absolute right-[14%] top-48 h-4 w-4 fill-current text-[oklch(0.6_0.22_340)] animate-shimmer" style={{ animationDelay: "1s" }} />
+        <Flower2 className="absolute left-[8%] bottom-32 h-7 w-7 text-[oklch(0.65_0.22_15)] animate-float" />
+        <Sparkle className="absolute right-[10%] bottom-40 h-6 w-6 text-[oklch(0.6_0.22_330)] animate-float" style={{ animationDelay: "2s" }} />
+
+        <div className="container relative mx-auto max-w-6xl px-6 text-center">
+          <span className="inline-flex items-center gap-2 rounded-full glass-strong px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary shadow-soft animate-fade-up">
             <Sparkle className="h-3.5 w-3.5" /> A community of 4000+ women in tech
           </span>
+
           <h1
-            className="mt-7 font-display text-5xl font-medium leading-[1.05] md:text-7xl lg:text-8xl animate-fade-up"
+            className="mt-8 font-serif text-[3.25rem] font-normal leading-[0.95] tracking-tight md:text-[6rem] lg:text-[7.5rem] animate-fade-up"
             style={{ animationDelay: "0.1s" }}
           >
-            Where girls{" "}
-            <span className="text-gradient italic">lead</span>
-            <br />
-            the future of tech.
+            <span className="block text-foreground/90">Girls</span>
+            <span className="block italic text-gradient-sunset">Leading</span>
+            <span className="block text-foreground/90">Tech</span>
           </h1>
+
           <p
-            className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground md:text-lg animate-fade-up"
+            className="mx-auto mt-7 max-w-2xl text-base text-muted-foreground md:text-lg animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Mentorship, scholarships, hackathons, communities — everything a
-            woman in tech needs to learn, ship and shine, all in one beautiful place.
+            Mentorship, scholarships, hackathons and a sisterhood of builders —
+            everything a woman in tech needs to learn, ship and shine, all in
+            one beautiful place.
           </p>
+
           <div
             className="mt-10 flex flex-wrap items-center justify-center gap-4 animate-fade-up"
             style={{ animationDelay: "0.3s" }}
@@ -88,11 +98,23 @@ function HomePage() {
               Explore resources
             </Link>
           </div>
+
+          {/* mini stats strip */}
+          <div className="mx-auto mt-14 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+            {stats.map((s) => (
+              <div key={s.label} className="rounded-2xl glass px-4 py-4 text-center shadow-soft">
+                <div className="font-serif text-2xl text-gradient">
+                  {s.value.toLocaleString()}{s.suffix}
+                </div>
+                <div className="mt-1 text-[10px] uppercase tracking-widest text-muted-foreground">{s.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* PICTURES MARQUEE */}
-      <section className="relative pb-16">
+      <section className="relative pb-20">
         <Marquee>
           {galleryImages.map((src, i) => (
             <div
@@ -110,7 +132,7 @@ function HomePage() {
         <div className="container mx-auto max-w-6xl px-6">
           <SectionHeading
             eyebrow="About us"
-            title="Built by women, for women in tech."
+            title="Built for women in tech."
             description="Girls Leading Tech is a movement for every girl who's ever wondered if she belongs in this room. Spoiler: she leads it."
           />
           <div className="mt-14 grid gap-6 md:grid-cols-2">
@@ -126,7 +148,7 @@ function HomePage() {
               </p>
             </GlassCard>
             <GlassCard glow className="p-8 md:p-10">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-secondary shadow-lavender">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl gradient-sunset shadow-coral">
                 <Users className="h-5 w-5 text-white" />
               </div>
               <h3 className="font-display text-2xl">Our Mission</h3>
@@ -140,52 +162,68 @@ function HomePage() {
         </div>
       </section>
 
-      {/* STATS */}
+      {/* INITIATIVES — bolder, animated, creative cards */}
       <section className="relative py-20">
-        <div className="container mx-auto max-w-6xl px-6">
-          <GlassCard strong className="p-10 md:p-14">
-            <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-              {stats.map((s) => (
-                <StatCounter key={s.label} value={s.value} suffix={s.suffix} label={s.label} />
-              ))}
-            </div>
-          </GlassCard>
-        </div>
-      </section>
-
-      {/* INITIATIVES */}
-      <section className="relative py-20">
-        <div className="container mx-auto max-w-6xl px-6">
+        <div className="container mx-auto max-w-7xl px-6">
           <SectionHeading
             eyebrow="Initiatives"
             title="Programs powering the movement."
             description="From flagship summits to year-round fellowships, every initiative is designed to push you forward."
           />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {initiatives.slice(0, 6).map((i) => (
-              <Link
-                key={i.slug}
-                to="/initiatives/$slug"
-                params={{ slug: i.slug }}
-                className="group block"
-              >
-                <GlassCard glow className="relative h-full overflow-hidden p-7">
-                  <div
-                    className={`absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br ${initiativeColors[i.color]} blur-2xl`}
-                  />
-                  <div className="relative">
-                    <h3 className="font-display text-2xl">{i.name}</h3>
-                    <p className="mt-2 text-sm font-medium text-primary">{i.tagline}</p>
-                    <p className="mt-4 text-sm text-muted-foreground line-clamp-3">
-                      {i.description}
-                    </p>
-                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                      Explore <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
-                    </span>
+          <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+            {initiatives.slice(0, 6).map((i, idx) => {
+              const s = initiativeStyles[i.color] ?? initiativeStyles.pink;
+              return (
+                <Link
+                  key={i.slug}
+                  to="/initiatives/$slug"
+                  params={{ slug: i.slug }}
+                  className="group relative block animate-fade-up"
+                  style={{ animationDelay: `${idx * 0.07}s` }}
+                >
+                  {/* gradient halo */}
+                  <div className={`pointer-events-none absolute -inset-[2px] rounded-[2rem] bg-gradient-to-br ${s.grad} opacity-60 blur-md transition-all duration-500 group-hover:opacity-100 group-hover:blur-lg`} />
+
+                  <div className={`relative h-full overflow-hidden rounded-[1.85rem] bg-white/85 p-7 backdrop-blur-xl ring-1 ${s.ring} shadow-soft transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-glow`}>
+                    {/* decorative blob */}
+                    <div className={`pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-gradient-to-br ${s.grad} opacity-30 blur-2xl transition-transform duration-700 group-hover:scale-125`} />
+                    {/* big rotating emoji */}
+                    <div className="pointer-events-none absolute -right-2 -top-2 select-none text-7xl opacity-20 transition-all duration-700 group-hover:rotate-12 group-hover:opacity-40">
+                      {s.emoji}
+                    </div>
+
+                    <div className="relative">
+                      <span className={`inline-block rounded-full ${s.chip} px-3 py-1 text-[10px] font-bold uppercase tracking-widest`}>
+                        Program {String(idx + 1).padStart(2, "0")}
+                      </span>
+                      <h3 className="mt-5 font-serif text-3xl leading-tight">{i.name}</h3>
+                      <p className={`mt-2 text-sm font-semibold bg-gradient-to-r ${s.grad} bg-clip-text text-transparent`}>
+                        {i.tagline}
+                      </p>
+                      <p className="mt-4 text-sm text-muted-foreground line-clamp-3">
+                        {i.description}
+                      </p>
+
+                      <div className="mt-6 flex items-center justify-between">
+                        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground">
+                          Explore
+                          <span className={`inline-block rounded-full bg-gradient-to-br ${s.grad} p-1.5 text-white shadow-glow transition-transform duration-300 group-hover:translate-x-1 group-hover:rotate-[-12deg]`}>
+                            <ArrowRight className="h-3.5 w-3.5" />
+                          </span>
+                        </span>
+                        <span className="text-[10px] uppercase tracking-widest text-muted-foreground">GLT</span>
+                      </div>
+                    </div>
                   </div>
-                </GlassCard>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link to="/initiatives" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline">
+              See all initiatives <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
         </div>
       </section>
@@ -292,19 +330,20 @@ function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-20">
+      <section className="relative py-24">
         <div className="container mx-auto max-w-5xl px-6">
-          <div className="relative overflow-hidden rounded-[2.5rem] gradient-primary p-12 text-center shadow-glow md:p-16">
-            <Sparkles />
-            <h2 className="font-display text-4xl text-white md:text-6xl">
+          <div className="relative overflow-hidden rounded-[2.5rem] gradient-sunset p-12 text-center shadow-glow md:p-16">
+            <div className="pointer-events-none absolute -left-10 -top-10 h-48 w-48 rounded-full bg-white/20 blur-2xl animate-blob" />
+            <div className="pointer-events-none absolute -right-10 -bottom-10 h-48 w-48 rounded-full bg-white/20 blur-2xl animate-blob" style={{ animationDelay: "3s" }} />
+            <h2 className="relative font-serif text-4xl text-white md:text-6xl">
               Your seat at the table is waiting.
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-white/90">
+            <p className="relative mx-auto mt-4 max-w-xl text-white/90">
               Become part of a community that builds, learns and lifts each other up.
             </p>
             <Link
               to="/join"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-semibold text-primary shadow-soft transition hover:scale-105"
+              className="relative mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-semibold text-primary shadow-soft transition hover:scale-105"
             >
               Join Girls Leading Tech <ArrowRight className="h-4 w-4" />
             </Link>
