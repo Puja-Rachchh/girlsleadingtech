@@ -1,6 +1,7 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
+import { ScrollToTop } from "@/components/site/ScrollToTop";
 import { HeadContent, Scripts, createRootRoute, Link } from "@tanstack/react-router";
 import appCss from "../styles.css?url";
 
@@ -75,6 +76,7 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   );
 }
