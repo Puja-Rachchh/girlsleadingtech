@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, ChevronDown, Sparkles } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   Sheet,
@@ -56,14 +56,8 @@ export function Navbar() {
           scrolled ? "glass-strong shadow-soft" : "glass",
         )}
       >
-        <Link to="/" className="flex items-center gap-2 group">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full gradient-primary shadow-glow">
-            <Sparkles className="h-4 w-4 text-white" />
-          </span>
-          <span className="font-display text-lg font-medium tracking-tight">
-            Girls Leading <span className="text-gradient">Tech</span>
-          </span>
-        </Link>
+        <Link to="/" aria-label="Home" className="h-9 w-9" />
+
 
         <nav className="hidden items-center gap-1 lg:flex">
           {mainLinks.slice(0, 3).map((l) => (
