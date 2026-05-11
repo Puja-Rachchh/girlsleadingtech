@@ -56,7 +56,7 @@ export function Navbar() {
           scrolled ? "glass-strong shadow-soft" : "glass",
         )}
       >
-        <Link to="/" aria-label="Home" className="h-9 w-9" />
+        <Link to="/" aria-label="Home" className="hidden h-2 w-2" />
 
 
         <nav className="hidden items-center gap-1 lg:flex">
