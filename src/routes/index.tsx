@@ -251,21 +251,28 @@ function HomePage() {
         </div>
         <div className="mt-12">
           <Marquee>
-            {speakers.map((s) => (
-              <div
-                key={s.id}
-                className="w-72 shrink-0 rounded-3xl glass p-6 shadow-soft"
-              >
-                <div className="flex h-16 w-16 items-center justify-center rounded-full gradient-primary text-xl font-medium text-white shadow-glow">
-                  {s.name.charAt(0)}
-                </div>
-                <h4 className="mt-4 font-display text-lg">{s.name}</h4>
-                <p className="text-xs font-medium uppercase tracking-widest text-primary">
-                  {s.designation}
-                </p>
-                <p className="text-sm text-muted-foreground">{s.company}</p>
-              </div>
-            ))}
+            {speakers.map((s) => {
+              const Wrap: any = s.linkedin ? "a" : "div";
+              const props = s.linkedin
+                ? { href: s.linkedin, target: "_blank", rel: "noopener noreferrer" }
+                : {};
+              return (
+                <Wrap
+                  key={s.id}
+                  {...props}
+                  className="block w-72 shrink-0 rounded-3xl glass p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-glow"
+                >
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full gradient-primary text-xl font-medium text-white shadow-glow">
+                    {s.name.charAt(0)}
+                  </div>
+                  <h4 className="mt-4 font-display text-lg">{s.name}</h4>
+                  <p className="text-xs font-medium uppercase tracking-widest text-primary">
+                    {s.designation}
+                  </p>
+                  {s.company && <p className="text-sm text-muted-foreground">{s.company}</p>}
+                </Wrap>
+              );
+            })}
           </Marquee>
         </div>
       </section>
