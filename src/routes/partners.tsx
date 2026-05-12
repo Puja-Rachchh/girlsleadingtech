@@ -45,9 +45,9 @@ function PartnersPage() {
         title="Better, together."
         description="The communities, industry leaders and ecosystem partners who believe in what we're building."
       />
-      <PartnerGroup title="Community Partners" items={communityPartners} />
-      <PartnerGroup title="Industry Partners" items={industryPartners} />
       <PartnerGroup title="Ecosystem Partners" items={ecosystemPartners} />
+      <PartnerGroup title="Industry Partners" items={industryPartners} />
+      <PartnerGroup title="Community Partners" items={communityPartners} />
       <div className="h-10" />
     </>
   );

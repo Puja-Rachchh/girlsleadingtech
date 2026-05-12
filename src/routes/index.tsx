@@ -348,50 +348,47 @@ function HomePage() {
         </div>
       </section>
 
-      {/* PARTNERS */}
+      {/* PARTNERS — smooth marquee */}
       <section className="relative py-20">
         <div className="container mx-auto max-w-6xl px-6">
           <SectionHeading
             eyebrow="Partners"
             title="The companies cheering us on."
-            description="Communities, industry leaders and ecosystem builders amplifying the movement."
+            description="Ecosystem, industry and community partners amplifying the movement."
           />
+        </div>
+        <div className="mt-14 space-y-6">
           {[
-            { label: "Community Partners", list: communityPartners },
-            { label: "Industry Partners", list: industryPartners },
-            { label: "Ecosystem Partners", list: ecosystemPartners },
-          ].map((group) => (
-            <div key={group.label} className="mt-14">
-              <h3 className="mb-6 text-center text-xs font-bold uppercase tracking-[0.25em] text-muted-foreground">
-                {group.label}
-              </h3>
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-                {group.list.map((p) => {
-                  const inner = (
-                    <div className="flex h-24 items-center justify-center rounded-2xl glass p-3 shadow-soft transition hover:-translate-y-1 hover:shadow-glow">
-                      {p.logo ? (
-                        <img src={p.logo} alt={p.name} loading="lazy" className="max-h-14 max-w-[80%] object-contain" />
-                      ) : (
-                        <span className="text-center text-sm font-display text-foreground/70">{p.name}</span>
-                      )}
-                    </div>
-                  );
-                  return p.website ? (
-                    <a key={p.id} href={p.website} target="_blank" rel="noopener noreferrer" title={p.name}>
-                      {inner}
-                    </a>
-                  ) : (
-                    <div key={p.id} title={p.name}>{inner}</div>
-                  );
-                })}
-              </div>
-            </div>
+            { label: "Ecosystem", list: ecosystemPartners },
+            { label: "Industry", list: industryPartners },
+            { label: "Community", list: communityPartners },
+          ].map((group, gi) => (
+            <Marquee key={group.label} reverse={gi % 2 === 1}>
+              {group.list.map((p) => {
+                const inner = (
+                  <div className="flex h-24 w-44 shrink-0 items-center justify-center rounded-2xl glass p-4 shadow-soft transition hover:-translate-y-1 hover:shadow-glow">
+                    {p.logo ? (
+                      <img src={p.logo} alt={p.name} loading="lazy" className="max-h-14 max-w-[80%] object-contain" />
+                    ) : (
+                      <span className="text-center text-xs font-display text-foreground/70">{p.name}</span>
+                    )}
+                  </div>
+                );
+                return p.website ? (
+                  <a key={p.id} href={p.website} target="_blank" rel="noopener noreferrer" title={p.name}>
+                    {inner}
+                  </a>
+                ) : (
+                  <div key={p.id} title={p.name}>{inner}</div>
+                );
+              })}
+            </Marquee>
           ))}
-          <div className="mt-10 text-center">
-            <Link to="/partners" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline">
-              See all partners <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-          </div>
+        </div>
+        <div className="container mx-auto mt-10 max-w-6xl px-6 text-center">
+          <Link to="/partners" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline">
+            See all partners <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
         </div>
       </section>
 
