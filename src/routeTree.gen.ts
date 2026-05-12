@@ -20,8 +20,11 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ResourcesVideosRouteImport } from './routes/resources.videos'
+import { Route as ResourcesToolsRouteImport } from './routes/resources.tools'
 import { Route as ResourcesScholarshipsRouteImport } from './routes/resources.scholarships'
+import { Route as ResourcesRoleModelsRouteImport } from './routes/resources.role-models'
 import { Route as ResourcesRoadmapsRouteImport } from './routes/resources.roadmaps'
+import { Route as ResourcesProgramsRouteImport } from './routes/resources.programs'
 import { Route as ResourcesPeopleRouteImport } from './routes/resources.people'
 import { Route as ResourcesInterviewPrepRouteImport } from './routes/resources.interview-prep'
 import { Route as ResourcesHackathonsRouteImport } from './routes/resources.hackathons'
@@ -90,14 +93,29 @@ const ResourcesVideosRoute = ResourcesVideosRouteImport.update({
   path: '/videos',
   getParentRoute: () => ResourcesRoute,
 } as any)
+const ResourcesToolsRoute = ResourcesToolsRouteImport.update({
+  id: '/tools',
+  path: '/tools',
+  getParentRoute: () => ResourcesRoute,
+} as any)
 const ResourcesScholarshipsRoute = ResourcesScholarshipsRouteImport.update({
   id: '/scholarships',
   path: '/scholarships',
   getParentRoute: () => ResourcesRoute,
 } as any)
+const ResourcesRoleModelsRoute = ResourcesRoleModelsRouteImport.update({
+  id: '/role-models',
+  path: '/role-models',
+  getParentRoute: () => ResourcesRoute,
+} as any)
 const ResourcesRoadmapsRoute = ResourcesRoadmapsRouteImport.update({
   id: '/roadmaps',
   path: '/roadmaps',
+  getParentRoute: () => ResourcesRoute,
+} as any)
+const ResourcesProgramsRoute = ResourcesProgramsRouteImport.update({
+  id: '/programs',
+  path: '/programs',
   getParentRoute: () => ResourcesRoute,
 } as any)
 const ResourcesPeopleRoute = ResourcesPeopleRouteImport.update({
@@ -184,8 +202,11 @@ export interface FileRoutesByFullPath {
   '/resources/hackathons': typeof ResourcesHackathonsRoute
   '/resources/interview-prep': typeof ResourcesInterviewPrepRoute
   '/resources/people': typeof ResourcesPeopleRoute
+  '/resources/programs': typeof ResourcesProgramsRoute
   '/resources/roadmaps': typeof ResourcesRoadmapsRoute
+  '/resources/role-models': typeof ResourcesRoleModelsRoute
   '/resources/scholarships': typeof ResourcesScholarshipsRoute
+  '/resources/tools': typeof ResourcesToolsRoute
   '/resources/videos': typeof ResourcesVideosRoute
 }
 export interface FileRoutesByTo {
@@ -211,8 +232,11 @@ export interface FileRoutesByTo {
   '/resources/hackathons': typeof ResourcesHackathonsRoute
   '/resources/interview-prep': typeof ResourcesInterviewPrepRoute
   '/resources/people': typeof ResourcesPeopleRoute
+  '/resources/programs': typeof ResourcesProgramsRoute
   '/resources/roadmaps': typeof ResourcesRoadmapsRoute
+  '/resources/role-models': typeof ResourcesRoleModelsRoute
   '/resources/scholarships': typeof ResourcesScholarshipsRoute
+  '/resources/tools': typeof ResourcesToolsRoute
   '/resources/videos': typeof ResourcesVideosRoute
 }
 export interface FileRoutesById {
@@ -239,8 +263,11 @@ export interface FileRoutesById {
   '/resources/hackathons': typeof ResourcesHackathonsRoute
   '/resources/interview-prep': typeof ResourcesInterviewPrepRoute
   '/resources/people': typeof ResourcesPeopleRoute
+  '/resources/programs': typeof ResourcesProgramsRoute
   '/resources/roadmaps': typeof ResourcesRoadmapsRoute
+  '/resources/role-models': typeof ResourcesRoleModelsRoute
   '/resources/scholarships': typeof ResourcesScholarshipsRoute
+  '/resources/tools': typeof ResourcesToolsRoute
   '/resources/videos': typeof ResourcesVideosRoute
 }
 export interface FileRouteTypes {
@@ -268,8 +295,11 @@ export interface FileRouteTypes {
     | '/resources/hackathons'
     | '/resources/interview-prep'
     | '/resources/people'
+    | '/resources/programs'
     | '/resources/roadmaps'
+    | '/resources/role-models'
     | '/resources/scholarships'
+    | '/resources/tools'
     | '/resources/videos'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -295,8 +325,11 @@ export interface FileRouteTypes {
     | '/resources/hackathons'
     | '/resources/interview-prep'
     | '/resources/people'
+    | '/resources/programs'
     | '/resources/roadmaps'
+    | '/resources/role-models'
     | '/resources/scholarships'
+    | '/resources/tools'
     | '/resources/videos'
   id:
     | '__root__'
@@ -322,8 +355,11 @@ export interface FileRouteTypes {
     | '/resources/hackathons'
     | '/resources/interview-prep'
     | '/resources/people'
+    | '/resources/programs'
     | '/resources/roadmaps'
+    | '/resources/role-models'
     | '/resources/scholarships'
+    | '/resources/tools'
     | '/resources/videos'
   fileRoutesById: FileRoutesById
 }
@@ -419,6 +455,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesVideosRouteImport
       parentRoute: typeof ResourcesRoute
     }
+    '/resources/tools': {
+      id: '/resources/tools'
+      path: '/tools'
+      fullPath: '/resources/tools'
+      preLoaderRoute: typeof ResourcesToolsRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
     '/resources/scholarships': {
       id: '/resources/scholarships'
       path: '/scholarships'
@@ -426,11 +469,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesScholarshipsRouteImport
       parentRoute: typeof ResourcesRoute
     }
+    '/resources/role-models': {
+      id: '/resources/role-models'
+      path: '/role-models'
+      fullPath: '/resources/role-models'
+      preLoaderRoute: typeof ResourcesRoleModelsRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
     '/resources/roadmaps': {
       id: '/resources/roadmaps'
       path: '/roadmaps'
       fullPath: '/resources/roadmaps'
       preLoaderRoute: typeof ResourcesRoadmapsRouteImport
+      parentRoute: typeof ResourcesRoute
+    }
+    '/resources/programs': {
+      id: '/resources/programs'
+      path: '/programs'
+      fullPath: '/resources/programs'
+      preLoaderRoute: typeof ResourcesProgramsRouteImport
       parentRoute: typeof ResourcesRoute
     }
     '/resources/people': {
@@ -556,8 +613,11 @@ interface ResourcesRouteChildren {
   ResourcesHackathonsRoute: typeof ResourcesHackathonsRoute
   ResourcesInterviewPrepRoute: typeof ResourcesInterviewPrepRoute
   ResourcesPeopleRoute: typeof ResourcesPeopleRoute
+  ResourcesProgramsRoute: typeof ResourcesProgramsRoute
   ResourcesRoadmapsRoute: typeof ResourcesRoadmapsRoute
+  ResourcesRoleModelsRoute: typeof ResourcesRoleModelsRoute
   ResourcesScholarshipsRoute: typeof ResourcesScholarshipsRoute
+  ResourcesToolsRoute: typeof ResourcesToolsRoute
   ResourcesVideosRoute: typeof ResourcesVideosRoute
 }
 
@@ -570,8 +630,11 @@ const ResourcesRouteChildren: ResourcesRouteChildren = {
   ResourcesHackathonsRoute: ResourcesHackathonsRoute,
   ResourcesInterviewPrepRoute: ResourcesInterviewPrepRoute,
   ResourcesPeopleRoute: ResourcesPeopleRoute,
+  ResourcesProgramsRoute: ResourcesProgramsRoute,
   ResourcesRoadmapsRoute: ResourcesRoadmapsRoute,
+  ResourcesRoleModelsRoute: ResourcesRoleModelsRoute,
   ResourcesScholarshipsRoute: ResourcesScholarshipsRoute,
+  ResourcesToolsRoute: ResourcesToolsRoute,
   ResourcesVideosRoute: ResourcesVideosRoute,
 }
 
