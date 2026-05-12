@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { GlassCard } from "@/components/site/GlassCard";
-import { ArrowRight, GraduationCap, Trophy, BookOpen, Newspaper, Video, Users, UserPlus, Map, BriefcaseBusiness, Library, Award } from "lucide-react";
+import { ArrowRight, GraduationCap, Trophy, BookOpen, Newspaper, Video, Users, UserPlus, Map, BriefcaseBusiness, Library, Award, Wrench, Rocket, Star } from "lucide-react";
 
 export const Route = createFileRoute("/resources")({
   head: () => ({
@@ -16,10 +16,13 @@ export const Route = createFileRoute("/resources")({
 const categories = [
   { to: "/resources/scholarships", label: "Scholarships", desc: "Funding programs for women in tech.", Icon: GraduationCap, color: "from-pink-300/60 to-pink-200/30" },
   { to: "/resources/hackathons", label: "Hackathons", desc: "Build, compete and win.", Icon: Trophy, color: "from-purple-300/60 to-purple-200/30" },
+  { to: "/resources/programs", label: "Programs", desc: "Fellowships & cohorts to apply to.", Icon: Rocket, color: "from-fuchsia-300/60 to-pink-200/30" },
   { to: "/resources/courses", label: "Courses", desc: "Curated learning paths.", Icon: BookOpen, color: "from-rose-300/60 to-rose-200/30" },
+  { to: "/resources/tools", label: "Tools", desc: "The stack we swear by.", Icon: Wrench, color: "from-amber-300/60 to-rose-200/30" },
   { to: "/resources/articles", label: "Articles", desc: "Reading worth your time.", Icon: Newspaper, color: "from-violet-300/60 to-violet-200/30" },
   { to: "/resources/videos", label: "Videos", desc: "Watch and learn.", Icon: Video, color: "from-fuchsia-300/60 to-fuchsia-200/30" },
   { to: "/resources/books", label: "Books", desc: "Books we love.", Icon: Library, color: "from-orange-300/60 to-orange-200/30" },
+  { to: "/resources/role-models", label: "Role Models", desc: "Indian women leading in tech.", Icon: Star, color: "from-rose-300/60 to-pink-200/30" },
   { to: "/resources/people", label: "People to Follow", desc: "Voices worth listening to.", Icon: UserPlus, color: "from-pink-300/60 to-rose-200/30" },
   { to: "/resources/communities", label: "Communities", desc: "Find your tribe.", Icon: Users, color: "from-purple-300/60 to-pink-200/30" },
   { to: "/resources/roadmaps", label: "Roadmaps", desc: "Career playbooks.", Icon: Map, color: "from-violet-300/60 to-rose-200/30" },
