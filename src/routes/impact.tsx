@@ -45,22 +45,6 @@ function ImpactPage() {
         </GlassCard>
       </section>
 
-      {/* Highlights */}
-      <section className="container mx-auto max-w-6xl px-6 pb-20">
-        <SectionHeading eyebrow="Highlights" title="By the activity." />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {highlights.map((h, i) => (
-            <GlassCard key={h.label} glow className="p-7 text-center animate-fade-up" style={{ animationDelay: `${i * 0.08}s` }}>
-              <div className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl gradient-primary shadow-glow">
-                <h.icon className="h-5 w-5 text-white" />
-              </div>
-              <div className="mt-4 font-display text-3xl text-gradient">{h.value}</div>
-              <div className="mt-1 text-xs font-semibold uppercase tracking-widest text-muted-foreground">{h.label}</div>
-            </GlassCard>
-          ))}
-        </div>
-      </section>
-
       {/* Stories */}
       <section className="container mx-auto max-w-6xl px-6 pb-20">
         <SectionHeading eyebrow="Stories" title="Real glow-ups, real careers." description="Words from members whose lives changed because of this community." />
