@@ -4,44 +4,25 @@ export function PageHeader({
   eyebrow,
   title,
   description,
-  italicWord,
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
-  italicWord?: string;
 }) {
-  const renderTitle = () => {
-    if (!italicWord) return title;
-    const i = title.toLowerCase().indexOf(italicWord.toLowerCase());
-    if (i === -1) return title;
-    return (
-      <>
-        {title.slice(0, i)}
-        <span className="ink-accent">{title.slice(i, i + italicWord.length)}</span>
-        {title.slice(i + italicWord.length)}
-      </>
-    );
-  };
-
   return (
-    <header className="relative overflow-hidden pt-36 pb-20 md:pt-44 md:pb-28">
+    <header className="relative overflow-hidden pt-32 pb-16 md:pt-40 md:pb-24">
       <GradientMesh />
-      <div className="container mx-auto max-w-4xl px-6 text-center animate-reveal">
+      <div className="container mx-auto max-w-4xl px-6 text-center animate-fade-up">
         {eyebrow && (
-          <div className="flex items-center justify-center gap-3">
-            <span className="h-px w-10 bg-foreground/20" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-foreground/60">
-              {eyebrow}
-            </span>
-            <span className="h-px w-10 bg-foreground/20" />
-          </div>
+          <span className="inline-block rounded-full glass px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary">
+            {eyebrow}
+          </span>
         )}
-        <h1 className="mt-6 font-serif text-5xl font-normal leading-[1.02] tracking-tight text-foreground md:text-7xl">
-          {renderTitle()}
+        <h1 className="mt-6 font-serif text-5xl font-normal leading-[1.05] tracking-tight md:text-7xl">
+          <span className="text-gradient-sunset">{title}</span>
         </h1>
         {description && (
-          <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
             {description}
           </p>
         )}

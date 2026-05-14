@@ -9,29 +9,35 @@ export function GradientMesh({ className }: { className?: string }) {
         className,
       )}
     >
-      <div className="absolute inset-0 bg-grain opacity-30" />
-      <div className="absolute -top-40 -left-40 h-[34rem] w-[34rem] rounded-full bg-[oklch(0.86_0.13_25/0.7)] blur-[110px] animate-blob" />
-      <div className="absolute top-1/4 -right-40 h-[32rem] w-[32rem] rounded-full bg-[oklch(0.82_0.12_340/0.65)] blur-[110px] animate-blob" style={{ animationDelay: "3s" }} />
-      <div className="absolute bottom-[-8rem] left-1/4 h-[30rem] w-[30rem] rounded-full bg-[oklch(0.88_0.13_70/0.7)] blur-[110px] animate-blob" style={{ animationDelay: "6s" }} />
-      <div className="absolute bottom-1/3 right-1/4 h-[24rem] w-[24rem] rounded-full bg-[oklch(0.84_0.1_310/0.5)] blur-[120px] animate-blob" style={{ animationDelay: "9s" }} />
+      <div className="bg-mesh absolute inset-0" />
+      <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-pink-soft blur-3xl opacity-60 animate-float" />
+      <div
+        className="absolute top-1/3 -right-32 h-96 w-96 rounded-full bg-lavender blur-3xl opacity-60 animate-float"
+        style={{ animationDelay: "2s" }}
+      />
+      <div
+        className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-peach blur-3xl opacity-50 animate-float"
+        style={{ animationDelay: "4s" }}
+      />
     </div>
   );
 }
 
 export function Sparkles() {
-  const dots = Array.from({ length: 8 });
+  const dots = Array.from({ length: 12 });
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
       {dots.map((_, i) => (
         <span
           key={i}
-          className="absolute rounded-full bg-foreground/30 animate-shimmer"
+          className="absolute rounded-full bg-white/80 animate-shimmer"
           style={{
             top: `${(i * 53) % 100}%`,
             left: `${(i * 37) % 100}%`,
-            width: `${3 + (i % 2) * 2}px`,
-            height: `${3 + (i % 2) * 2}px`,
-            animationDelay: `${i * 0.5}s`,
+            width: `${4 + (i % 3) * 2}px`,
+            height: `${4 + (i % 3) * 2}px`,
+            animationDelay: `${i * 0.4}s`,
+            boxShadow: "0 0 8px oklch(1 0 0 / 0.8)",
           }}
         />
       ))}
