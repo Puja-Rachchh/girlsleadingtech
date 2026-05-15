@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { GlassCard } from "@/components/site/GlassCard";
 import { getEvent } from "@/data/community";
+import { youtubeThumb, getSpeakerImageByName } from "@/lib/event-helpers";
 import { Calendar, Clock, ArrowLeft, ExternalLink } from "lucide-react";
 
 export const Route = createFileRoute("/events/$eventId")({
@@ -32,13 +33,21 @@ export const Route = createFileRoute("/events/$eventId")({
 
 function EventDetail() {
   const { event } = Route.useLoaderData();
+  const thumb = youtubeThumb(event.youtubeLink) || event.posterImage;
+  const speakerImg = getSpeakerImageByName(event.speakerName);
 
   return (
     <section className="container mx-auto max-w-3xl px-6 pb-24 pt-32">
       <Link to="/events/upcoming" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary">
         <ArrowLeft className="h-4 w-4" /> All events
       </Link>
-      <GlassCard strong glow className="mt-6 p-8 md:p-12">
+      <GlassCard strong className="mt-6 overflow-hidden p-0">
+        {thumb && (
+          <div className="aspect-video w-full overflow-hidden">
+            <img src={thumb} alt={event.title} className="h-full w-full object-cover" />
+          </div>
+        )}
+        <div className="p-8 md:p-12">
         <span className={`inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-widest ${
           event.status === "upcoming" ? "gradient-primary text-white" : "bg-secondary/20 text-secondary"
         }`}>
@@ -61,10 +70,21 @@ function EventDetail() {
 
         {event.summary && <p className="mt-8 text-base text-foreground/80">{event.summary}</p>}
 
-        <div className="mt-8 rounded-2xl border border-primary/15 bg-white/40 p-5">
-          <div className="text-xs font-semibold uppercase tracking-widest text-primary">Speaker</div>
-          <div className="mt-2 font-display text-xl">{event.speakerName}</div>
-          <div className="text-sm text-muted-foreground">{event.speakerDesignation} · {event.speakerCompany}</div>
+        <div className="mt-8 flex items-center gap-4 rounded-2xl border border-primary/15 bg-white/40 p-5">
+          <div className="h-16 w-16 shrink-0 overflow-hidden rounded-full bg-muted ring-2 ring-white">
+            {speakerImg ? (
+              <img src={speakerImg} alt={event.speakerName} className="h-full w-full object-cover" />
+            ) : (
+              <div className="flex h-full items-center justify-center font-display text-2xl text-primary/50">
+                {event.speakerName?.charAt(0)}
+              </div>
+            )}
+          </div>
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-widest text-primary">Speaker</div>
+            <div className="mt-1 font-display text-xl">{event.speakerName}</div>
+            <div className="text-sm text-muted-foreground">{event.speakerDesignation} · {event.speakerCompany}</div>
+          </div>
         </div>
 
         {(event.registrationLink || event.youtubeLink) && (
@@ -72,11 +92,12 @@ function EventDetail() {
             href={event.registrationLink || event.youtubeLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 rounded-full gradient-primary px-7 py-3 text-sm font-semibold text-white shadow-glow"
+            className="mt-8 inline-flex items-center gap-2 rounded-full gradient-primary px-7 py-3 text-sm font-semibold text-white shadow-soft"
           >
             {event.status === "upcoming" ? "Register" : "Watch recording"} <ExternalLink className="h-4 w-4" />
           </a>
         )}
+        </div>
       </GlassCard>
     </section>
   );
