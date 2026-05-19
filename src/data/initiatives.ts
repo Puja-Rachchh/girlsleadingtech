@@ -61,6 +61,41 @@ export const initiatives: Initiative[] = [
       "A monthly spotlight series featuring inspiring stories from members across colleges, companies and continents.",
     color: "violet",
   },
+  {
+    slug: "hogwarts",
+    name: "Hogwarts of Tech",
+    tagline: "A magical start to your tech journey.",
+    description: "An intensive 4-week cohort-based program designed to introduce beginners to the world of open source, development, and community building.",
+    color: "violet",
+  },
+  {
+    slug: "mentorship",
+    name: "GLT Mentorship Program",
+    tagline: "Guided growth.",
+    description: "A 1:1 mentorship initiative pairing early-career developers with senior industry professionals for resume reviews, mock interviews, and career guidance.",
+    color: "pink",
+  },
+  {
+    slug: "global-ai-buildathon",
+    name: "Global AI Buildathon",
+    tagline: "Building the future, together.",
+    description: "A massive online hackathon focused on solving real-world problems using Artificial Intelligence and Machine Learning APIs.",
+    color: "rose",
+  },
+  {
+    slug: "machine-learning-cohort",
+    name: "Machine Learning Cohort",
+    tagline: "From zero to hero in ML.",
+    description: "A structured 8-week learning path covering everything from basic regression to advanced neural networks and NLP.",
+    color: "peach",
+  },
+  {
+    slug: "buildsprint",
+    name: "BuildSprint",
+    tagline: "Ship it fast.",
+    description: "A rapid 48-hour challenge focused on taking an idea from zero to a deployed MVP.",
+    color: "lavender",
+  }
 ];
 
 export const getInitiative = (slug: string) =>
