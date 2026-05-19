@@ -5,7 +5,7 @@ import { StatCounter } from "@/components/site/StatCounter";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { stats } from "@/data/stats";
 import { testimonials } from "@/data/community";
-import { colleges } from "@/data/colleges";
+import { InteractiveMap } from "@/components/site/InteractiveMap";
 import { ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/impact")({
@@ -41,33 +41,25 @@ function ImpactPage() {
       {/* Stories */}
       <section className="container mx-auto max-w-6xl px-6 pb-20">
         <SectionHeading eyebrow="Stories" title="Real glow-ups, real careers." description="Words from members whose lives changed because of this community." />
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
-          {testimonials.map((t, i) => (
-            <GlassCard key={t.id} glow className="p-8 animate-fade-up" style={{ animationDelay: `${i * 0.08}s` }}>
-              <div className="text-5xl text-primary/40 font-display leading-none">"</div>
-              <p className="text-base text-foreground/85">{t.quote}</p>
-              <div className="mt-6 border-t border-primary/10 pt-4">
-                <div className="font-semibold">{t.name}</div>
-                <div className="text-xs text-muted-foreground">{t.role}</div>
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {testimonials.slice(0, 6).map((t, i) => (
+            <GlassCard key={t.id} glow className="flex flex-col p-8 animate-fade-up transition-transform hover:-translate-y-1 hover:shadow-lavender" style={{ animationDelay: `${i * 0.08}s` }}>
+              <div className="text-4xl text-primary/30 font-serif leading-none mb-2">"</div>
+              <p className="text-sm text-foreground/85 flex-1">{t.quote}</p>
+              <div className="mt-6 pt-4 border-t border-primary/10">
+                <div className="font-semibold text-foreground">{t.name}</div>
+                <div className="text-xs text-primary font-medium">{t.role}</div>
               </div>
             </GlassCard>
           ))}
         </div>
       </section>
 
-      {/* Colleges reached */}
+      {/* Colleges reached / Map */}
       <section className="container mx-auto max-w-6xl px-6 pb-20">
-        <SectionHeading eyebrow="Reach" title="Colleges in our community." description="A small sample of the 1000+ campuses where GLT members are leading clubs, hackathons and meetups." />
-        <div className="mt-14 flex flex-wrap justify-center gap-2">
-          {colleges.map((c, i) => (
-            <span
-              key={c}
-              className="rounded-full glass px-4 py-2 text-xs font-medium text-foreground/80 shadow-soft animate-fade-up"
-              style={{ animationDelay: `${(i % 30) * 0.02}s` }}
-            >
-              {c}
-            </span>
-          ))}
+        <SectionHeading eyebrow="Reach" title="A movement across India." description="1000+ campuses, 23+ states. See where our community is building and leading." />
+        <div className="mt-14">
+          <InteractiveMap />
         </div>
       </section>
 

@@ -3,6 +3,7 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { ScrollToTop } from "@/components/site/ScrollToTop";
 import { HeadContent, Scripts, createRootRoute, Link } from "@tanstack/react-router";
+import { CommunityChatbot } from "@/components/site/CommunityChatbot";
 import appCss from "../styles.css?url";
 
 function NotFound() {
@@ -80,6 +81,7 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
+      <CommunityChatbot />
       <ScrollToTop />
     </>
   );

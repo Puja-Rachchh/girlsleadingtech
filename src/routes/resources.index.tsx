@@ -42,14 +42,14 @@ function ResourcesHub() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map(({ to, label, desc, Icon, color }) => (
             <Link key={to} to={to} className="group block">
-              <GlassCard glow className="relative h-full overflow-hidden p-7">
-                <div className={`absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br ${color} blur-2xl`} />
-                <div className="relative">
+              <GlassCard glow className="relative flex h-full flex-col overflow-hidden p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-lavender">
+                <div className={`absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br ${color} blur-2xl opacity-60 transition-opacity group-hover:opacity-100`} />
+                <div className="relative flex flex-1 flex-col">
                   <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl gradient-primary shadow-soft">
                     <Icon className="h-5 w-5 text-white" />
                   </div>
                   <h3 className="mt-5 font-display text-xl">{label}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
+                  <p className="mt-2 text-sm text-muted-foreground flex-1">{desc}</p>
                   <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
                     Explore <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
                   </span>
