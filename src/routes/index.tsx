@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { Marquee } from "@/components/site/Marquee";
 import { SpeakerCard } from "@/components/site/SpeakerCard";
 import { ArrowRight, Heart, Users, Sparkle, Star, Flower2, Linkedin } from "lucide-react";
+import FAQ from "@/components/site/FAQ";
 import { stats } from "@/data/stats";
 import { initiatives } from "@/data/initiatives";
 import { speakers, testimonials } from "@/data/community";
@@ -561,6 +562,9 @@ function HomePage() {
         industryPartners={industryPartners}
         communityPartners={communityPartners}
       />
+
+      {/* FAQ */}
+      <FAQ />
 
       {/* CTA */}
       <section className="relative py-10 md:py-14 bg-[#d955a4] overflow-hidden">
