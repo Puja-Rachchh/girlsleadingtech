@@ -18,7 +18,7 @@ import { InitiativesScrapbook } from "./initiatives";
 import pixelBtn from "@/assets/pixel-button.png"
 import presenting from "@/assets/characters/main-mascot/presenting.png"
 import { TestimonialsGrid } from "@/components/home/TestimonialsGrid"
-
+import { PartnersSection } from "@/components/home/PartnersSection"
 
 import gallery1 from "@/assets/gallery-1.webp";
 import gallery2 from "@/assets/gallery-2.webp";
@@ -31,6 +31,7 @@ import gallery8 from "@/assets/gallery-8.webp";
 import gallery9 from "@/assets/gallery-9.webp";
 import Hero from "@/components/home/hero";
 import SpeakersShowcase from "@/components/home/SpeakersShowcase";
+import CollegesReachedSection from "@/components/home/CollegesReachedSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -532,81 +533,20 @@ function HomePage() {
       {/* SPEAKERS — featured static grid */}
      <div className="mt-6 md:mt-10">
           <SpeakersShowcase />
-        </div>
+      </div>
             
       {/* TESTIMONIALS */}
       <TestimonialsGrid />
 
       {/* COLLEGES REACHED */}
-      <section className="relative py-20">
-        <div className="container mx-auto max-w-6xl px-6">
-          <SectionHeading
-            eyebrow="Reach"
-            title="1000+ campuses, one community."
-            description="A glimpse at the colleges where GLT members lead clubs, hackathons and chapters across India."
-          />
-          <div className="mt-14 flex flex-wrap justify-center gap-2">
-            {colleges.slice(0, 36).map((c, i) => (
-              <span
-                key={c}
-                className="rounded-full glass px-4 py-2 text-xs font-medium text-foreground/80 shadow-soft animate-fade-up"
-                style={{ animationDelay: `${(i % 18) * 0.04}s` }}
-              >
-                {c}
-              </span>
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <Link to="/impact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline">
-              See all colleges <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CollegesReachedSection />
 
       {/* PARTNERS — smooth marquee */}
-      <section className="relative py-20">
-        <div className="container mx-auto max-w-6xl px-6">
-          <SectionHeading
-            eyebrow="Partners"
-            title="The companies cheering us on."
-            description="Ecosystem, industry and community partners amplifying the movement."
-          />
-        </div>
-        <div className="mt-14 space-y-6">
-          {[
-            { label: "Ecosystem", list: ecosystemPartners },
-            { label: "Industry", list: industryPartners },
-            { label: "Community", list: communityPartners },
-          ].map((group, gi) => (
-            <Marquee key={group.label} reverse={gi % 2 === 1}>
-              {group.list.map((p) => {
-                const inner = (
-                  <div className="flex h-24 w-44 shrink-0 items-center justify-center    glass p-4 shadow-soft transition hover:-translate-y-1 hover:shadow-soft">
-                    {p.logo ? (
-                      <img src={p.logo} alt={p.name} loading="lazy" className="max-h-14 max-w-[80%] object-contain" />
-                    ) : (
-                      <span className="text-center text-xs font-display text-foreground/70">{p.name}</span>
-                    )}
-                  </div>
-                );
-                return p.website ? (
-                  <a key={p.id} href={p.website} target="_blank" rel="noopener noreferrer" title={p.name}>
-                    {inner}
-                  </a>
-                ) : (
-                  <div key={p.id} title={p.name}>{inner}</div>
-                );
-              })}
-            </Marquee>
-          ))}
-        </div>
-        <div className="container mx-auto mt-10 max-w-6xl px-6 text-center">
-          <Link to="/partners" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline">
-            See all partners <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
-      </section>
+        <PartnersSection
+        ecosystemPartners={ecosystemPartners}
+        industryPartners={industryPartners}
+        communityPartners={communityPartners}
+      />
 
       {/* CTA */}
       <section className="relative py-24">

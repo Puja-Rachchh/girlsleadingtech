@@ -190,22 +190,22 @@ export default function SpeakersShowcase() {
     />
 
     <span
-      className="
-        absolute inset-0
-        flex items-center justify-center
-        text-black text-center font-bold
-        pointer-events-none
-      "
-      style={{
-        fontFamily: "'Press Start 2P', monospace",
-        fontSize: "clamp(0.65rem, 0.95vw, 1rem)",
-        letterSpacing: "0.08em",
-        lineHeight: "1.0",
-      }}
-    >
-      See More <br className="sm:hidden" />
-      Speakers →
-    </span>
+        className="
+          absolute inset-0
+          flex items-center justify-center
+          text-black text-center font-bold
+          pointer-events-none
+          whitespace-nowrap
+        "
+        style={{
+         fontFamily: "'Press Start 2P', monospace",
+          fontSize: "clamp(0.6rem, 1.1vw, 1.15rem)",
+          letterSpacing: "0.06em",
+          lineHeight: "1",
+        }}
+      >
+        See More Speakers →
+      </span>
     </Link>
   </div>
   </div>
