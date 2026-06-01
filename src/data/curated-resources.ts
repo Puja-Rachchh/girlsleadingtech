@@ -1,8 +1,13 @@
 import type { Resource } from "./types";
 
-export const curatedRoadmaps: Record<string, { title: string; steps: string[]; links: { name: string; url: string }[] }> = {
+export const curatedRoadmaps: Record<
+  string,
+  { title: string; summary?: string; steps: string[]; links: { name: string; url: string }[] }
+> = {
   dsa: {
     title: "Data Structures & Algorithms (DSA) Roadmap",
+    summary:
+      "Covers data structures and algorithms step by step — arrays, linked lists, trees, graphs, and dynamic programming. Great for interviews and problem solving.",
     steps: [
       "Phase 1: Choose a language (C++, Java, or Python) and learn the syntax and core concepts.",
       "Phase 2: Master Complexity Analysis - Understand Time and Space complexity using Big-O notation.",
@@ -17,6 +22,23 @@ export const curatedRoadmaps: Record<string, { title: string; steps: string[]; l
       { name: "NeetCode Practice", url: "https://neetcode.io/" },
       { name: "LeetCode Coding Practice", url: "https://leetcode.com/" }
     ]
+  },
+  css: {
+    title: "CSS Essentials Roadmap",
+    summary:
+      "Styling fundamentals, responsive design, Flexbox, Grid, animations, and modern best practices.",
+    steps: [
+      "Phase 1: Selectors & Box Model — Learn specificity, margin, padding, borders, and display types.",
+      "Phase 2: Layout — Master Flexbox and CSS Grid for responsive page structure.",
+      "Phase 3: Responsive Design — Use media queries, relative units, and mobile-first patterns.",
+      "Phase 4: Visual Polish — Explore transitions, transforms, and lightweight animations.",
+      "Phase 5: Modern CSS — Practice custom properties, container queries, and accessible color contrast.",
+    ],
+    links: [
+      { name: "MDN CSS Guide", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+      { name: "CSS-Tricks Almanac", url: "https://css-tricks.com/almanac/" },
+      { name: "web.dev Learn CSS", url: "https://web.dev/learn/css/" },
+    ],
   },
   java: {
     title: "Java Basics & Advanced Roadmap",

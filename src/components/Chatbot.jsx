@@ -3,9 +3,12 @@ import React, { useEffect, useRef, useState } from "react";
 const API_ENDPOINT = "/api/chat";
 const LS_KEY = "glt_chatbot_messages";
 
+const FEEDBACK_MAIL =
+  "mailto:girlsleadingtech@gmail.com?subject=GLT%20Website%20Suggestion&body=Hi%20GLT%20team%2C%20I%27d%20like%20to%20suggest%3A%20";
+
 const WELCOME = {
   role: "assistant",
-  text: "Hi! I'm your GLT assistant. Ask me about Scholarships, Events, Mentorship, or tech roadmaps like DSA, Python, Frontend, ML, Cloud and more!",
+  text: "Hi! I'm your GLT assistant. Ask about scholarships, events, mentorship, hackathons, programs, or tech roadmaps like DSA, CSS, Python, Frontend, ML, and Cloud.",
 };
 
 function loadMessages() {
@@ -135,7 +138,16 @@ function TypingIndicator() {
   );
 }
 
-const SUGGESTIONS = ["DSA roadmap", "Python", "Scholarships", "Events", "Girls in tech", "Machine learning"];
+const SUGGESTIONS = [
+  "Scholarships",
+  "Events",
+  "Mentorship",
+  "Hackathons",
+  "DSA roadmap",
+  "CSS essentials",
+  "Python",
+  "Machine learning",
+];
 
 export default function Chatbot() {
   const [open, setOpen] = useState(false);
@@ -311,7 +323,32 @@ export default function Chatbot() {
                   </div>
                 </div>
               </div>
-              <div style={{ display: "flex", gap: "6px" }}>
+              <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
+                <a
+                  href={FEEDBACK_MAIL}
+                  title="Suggest a feature or resource"
+                  style={{
+                    background: "rgba(255,255,255,0.06)",
+                    border: "1px solid rgba(168,85,247,0.35)",
+                    borderRadius: "8px",
+                    color: "rgba(255,255,255,0.85)",
+                    padding: "5px 9px",
+                    fontSize: "11px",
+                    textDecoration: "none",
+                    whiteSpace: "nowrap",
+                    transition: "all 0.2s",
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.background = "rgba(168,85,247,0.25)";
+                    e.currentTarget.style.color = "#fff";
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.background = "rgba(255,255,255,0.06)";
+                    e.currentTarget.style.color = "rgba(255,255,255,0.85)";
+                  }}
+                >
+                  Let us know
+                </a>
                 <button
                   type="button"
                   onClick={clearHistory}
