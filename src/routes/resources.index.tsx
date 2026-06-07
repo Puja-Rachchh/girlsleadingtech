@@ -39,8 +39,7 @@ const categories = [
     desc: "Curated grants and fellowships for women breaking into tech.",
     bar: "bg-[#7EB5A6]", taglineColor: "text-[#2F5D50]", cta: "bg-[#7EB5A6] hover:bg-[#6BA393]", rotate: "-rotate-2",
     stickers: [
-      <img key="s1" src={graduationCap} className="absolute -top-8 left-2 w-16 rotate-[-14deg] pointer-events-none z-10 drop-shadow-md" />,
-      <img key="s2" src={star}          className="absolute -top-4 right-3 w-10 rotate-[18deg] pointer-events-none z-10 drop-shadow-sm" />,
+      <img key="s1" src={graduationCap} className="absolute -top-8 right-4 w-16 rotate-[12deg] pointer-events-none z-10 drop-shadow-lg" />,
     ],
   },
   {
@@ -50,8 +49,7 @@ const categories = [
     desc: "The best hackathons to test your skills and come home with prizes.",
     bar: "bg-[#FF8A5B]", taglineColor: "text-[#A64B28]", cta: "bg-[#FF8A5B] hover:bg-[#F67848]", rotate: "rotate-2",
     stickers: [
-      <img key="s1" src={trophy}    className="absolute -top-9 left-4 w-16 rotate-[-10deg] pointer-events-none z-10 drop-shadow-md" />,
-      <img key="s2" src={paperClip} className="absolute -top-20 right-6 w-48 rotate-[18deg] pointer-events-none z-10 drop-shadow-sm" />,
+      <img key="s1" src={trophy} className="absolute -top-8 right-4 w-16 rotate-[-10deg] pointer-events-none z-10 drop-shadow-lg" />,
     ],
   },
   {
@@ -61,8 +59,7 @@ const categories = [
     desc: "Fellowships and bootcamps to level up fast with other women in tech.",
     bar: "bg-[#D8B4E8]", taglineColor: "text-[#7B4F92]", cta: "bg-[#D8B4E8] hover:bg-[#C89DDB]", rotate: "-rotate-1",
     stickers: [
-      <img key="s1" src={checklist} className="absolute -top-9 left-3 w-16 rotate-[-12deg] pointer-events-none z-10 drop-shadow-md" />,
-      <img key="s2" src={smiley}    className="absolute -top-7 right-4 w-14 rotate-[10deg] pointer-events-none z-10 drop-shadow-sm" />,
+      <img key="s1" src={checklist} className="absolute -top-8 right-4 w-16 rotate-[8deg] pointer-events-none z-10 drop-shadow-lg" />,
     ],
   },
   {
@@ -72,8 +69,7 @@ const categories = [
     desc: "Hand-picked learning paths from beginner to advanced, free and paid.",
     bar: "bg-[#A9B7FF]", taglineColor: "text-[#4B57A8]", cta: "bg-[#A9B7FF] hover:bg-[#95A5F5]", rotate: "rotate-1",
     stickers: [
-      <img key="s1" src={book}      className="absolute -top-9 left-3 w-16 rotate-[-8deg] pointer-events-none z-10 drop-shadow-md" />,
-      <img key="s2" src={washiTape} className="absolute -top-16 right-2 w-32 rotate-[-18deg] pointer-events-none z-10 drop-shadow-sm" />,
+      <img key="s1" src={book} className="absolute -top-8 right-4 w-16 rotate-[-12deg] pointer-events-none z-10 drop-shadow-lg" />,
     ],
   },
   {
@@ -83,8 +79,7 @@ const categories = [
     desc: "Every tool and app that women in our community actually use daily.",
     bar: "bg-[#FFD166]", taglineColor: "text-[#996600]", cta: "bg-[#FFD166] hover:bg-[#F0C040]", rotate: "-rotate-2",
     stickers: [
-      <img key="s1" src={briefcase} className="absolute -top-9 right-3 w-16 rotate-[12deg] pointer-events-none z-10 drop-shadow-md" />,
-      <img key="s2" src={star}      className="absolute -top-5 left-4 w-11 rotate-[-15deg] pointer-events-none z-10 drop-shadow-sm" />,
+      <img key="s1" src={briefcase} className="absolute -top-8 right-4 w-16 rotate-[10deg] pointer-events-none z-10 drop-shadow-lg" />,
     ],
   },
   {
@@ -94,8 +89,7 @@ const categories = [
     desc: "Essays and deep-dives on tech, careers and women in the industry.",
     bar: "bg-[#7EB5A6]", taglineColor: "text-[#2F5D50]", cta: "bg-[#7EB5A6] hover:bg-[#6BA393]", rotate: "rotate-2",
     stickers: [
-      <img key="s1" src={newspaper} className="absolute -top-9 left-3 w-16 rotate-[-10deg] pointer-events-none z-10 drop-shadow-md" />,
-      <img key="s2" src={paperClip} className="absolute -top-20 right-8 w-44 rotate-[-15deg] pointer-events-none z-10 drop-shadow-sm" />,
+      <img key="s1" src={newspaper} className="absolute -top-8 right-4 w-16 rotate-[-8deg] pointer-events-none z-10 drop-shadow-lg" />,
     ],
   },
   {
@@ -105,8 +99,7 @@ const categories = [
     desc: "Talks and tutorials that inspire and educate — picked by the community.",
     bar: "bg-[#FF8A5B]", taglineColor: "text-[#A64B28]", cta: "bg-[#FF8A5B] hover:bg-[#F67848]", rotate: "-rotate-1",
     stickers: [
-      <img key="s1" src={videoPlayBtn} className="absolute -top-9 left-3 w-16 rotate-[-8deg] pointer-events-none z-10 drop-shadow-md" />,
-      <img key="s2" src={smiley}       className="absolute -top-6 right-3 w-14 rotate-[14deg] pointer-events-none z-10 drop-shadow-sm" />,
+      <img key="s1" src={videoPlayBtn} className="absolute -top-8 right-4 w-16 rotate-[12deg] pointer-events-none z-10 drop-shadow-lg" />,
     ],
   },
   {
@@ -116,8 +109,7 @@ const categories = [
     desc: "Books our community keeps recommending — from memoirs to technical deep-dives.",
     bar: "bg-[#A9B7FF]", taglineColor: "text-[#4B57A8]", cta: "bg-[#A9B7FF] hover:bg-[#95A5F5]", rotate: "rotate-2",
     stickers: [
-      <img key="s1" src={book}      className="absolute -top-9 right-3 w-16 rotate-[10deg] pointer-events-none z-10 drop-shadow-md" />,
-      <img key="s2" src={washiTape} className="absolute -top-14 left-6 w-32 rotate-[-20deg] pointer-events-none z-10 drop-shadow-sm" />,
+      <img key="s1" src={book} className="absolute -top-8 right-4 w-16 rotate-[-10deg] pointer-events-none z-10 drop-shadow-lg" />,
     ],
   },
   {
@@ -127,8 +119,7 @@ const categories = [
     desc: "Indian women building and leading across every corner of tech.",
     bar: "bg-[#D8B4E8]", taglineColor: "text-[#7B4F92]", cta: "bg-[#D8B4E8] hover:bg-[#C89DDB]", rotate: "-rotate-2",
     stickers: [
-      <img key="s1" src={crown}         className="absolute -top-9 left-4 w-16 rotate-[-12deg] pointer-events-none z-10 drop-shadow-md" />,
-      <img key="s2" src={communityStar} className="absolute -top-7 right-2 w-14 rotate-[16deg] pointer-events-none z-10 drop-shadow-sm" />,
+      <img key="s1" src={crown} className="absolute -top-8 right-4 w-16 rotate-[8deg] pointer-events-none z-10 drop-shadow-lg" />,
     ],
   },
   {
@@ -138,8 +129,7 @@ const categories = [
     desc: "Creators and founders worth following for daily doses of insight.",
     bar: "bg-[#FFD166]", taglineColor: "text-[#996600]", cta: "bg-[#FFD166] hover:bg-[#F0C040]", rotate: "rotate-1",
     stickers: [
-      <img key="s1" src={chatBubble} className="absolute -top-9 left-3 w-16 rotate-[-10deg] pointer-events-none z-10 drop-shadow-md" />,
-      <img key="s2" src={paperClip}  className="absolute -top-20 right-6 w-44 rotate-[-20deg] pointer-events-none z-10 drop-shadow-sm" />,
+      <img key="s1" src={chatBubble} className="absolute -top-8 right-4 w-16 rotate-[-12deg] pointer-events-none z-10 drop-shadow-lg" />,
     ],
   },
   {
@@ -149,8 +139,7 @@ const categories = [
     desc: "Discords, groups and spaces where women in tech gather and grow.",
     bar: "bg-[#7EB5A6]", taglineColor: "text-[#2F5D50]", cta: "bg-[#7EB5A6] hover:bg-[#6BA393]", rotate: "-rotate-1",
     stickers: [
-      <img key="s1" src={communityStar} className="absolute -top-9 left-4 w-16 rotate-[-8deg] pointer-events-none z-10 drop-shadow-md" />,
-      <img key="s2" src={smiley}        className="absolute -top-6 right-3 w-14 rotate-[12deg] pointer-events-none z-10 drop-shadow-sm" />,
+      <img key="s1" src={communityStar} className="absolute -top-8 right-4 w-16 rotate-[10deg] pointer-events-none z-10 drop-shadow-lg" />,
     ],
   },
   {
@@ -160,8 +149,7 @@ const categories = [
     desc: "Step-by-step playbooks for every tech role — built for women starting or pivoting.",
     bar: "bg-[#FF8A5B]", taglineColor: "text-[#A64B28]", cta: "bg-[#FF8A5B] hover:bg-[#F67848]", rotate: "rotate-2",
     stickers: [
-      <img key="s1" src={compass}   className="absolute -top-9 left-3 w-16 rotate-[-14deg] pointer-events-none z-10 drop-shadow-md" />,
-      <img key="s2" src={washiTape} className="absolute -top-14 right-4 w-32 rotate-[15deg] pointer-events-none z-10 drop-shadow-sm" />,
+      <img key="s1" src={compass} className="absolute -top-8 right-4 w-16 rotate-[-8deg] pointer-events-none z-10 drop-shadow-lg" />,
     ],
   },
   {
@@ -171,8 +159,7 @@ const categories = [
     desc: "DSA, system design and negotiation — everything you need to land the offer.",
     bar: "bg-[#A9B7FF]", taglineColor: "text-[#4B57A8]", cta: "bg-[#A9B7FF] hover:bg-[#95A5F5]", rotate: "-rotate-2",
     stickers: [
-      <img key="s1" src={checklist} className="absolute -top-9 right-3 w-16 rotate-[10deg] pointer-events-none z-10 drop-shadow-md" />,
-      <img key="s2" src={star}      className="absolute -top-5 left-4 w-11 rotate-[-18deg] pointer-events-none z-10 drop-shadow-sm" />,
+      <img key="s1" src={checklist} className="absolute -top-8 right-4 w-16 rotate-[12deg] pointer-events-none z-10 drop-shadow-lg" />,
     ],
   },
   {
@@ -182,8 +169,7 @@ const categories = [
     desc: "The certifications that actually matter — cloud, data, security and more.",
     bar: "bg-[#D8B4E8]", taglineColor: "text-[#7B4F92]", cta: "bg-[#D8B4E8] hover:bg-[#C89DDB]", rotate: "rotate-1",
     stickers: [
-      <img key="s1" src={certificate} className="absolute -top-9 left-3 w-16 rotate-[-10deg] pointer-events-none z-10 drop-shadow-md" />,
-      <img key="s2" src={trophy}      className="absolute -top-7 right-3 w-14 rotate-[14deg] pointer-events-none z-10 drop-shadow-sm" />,
+      <img key="s1" src={certificate} className="absolute -top-8 right-4 w-16 rotate-[-10deg] pointer-events-none z-10 drop-shadow-lg" />,
     ],
   },
 ];
