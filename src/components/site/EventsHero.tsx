@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
-import presentingMascot from "@/assets/characters/main-mascot/presenting.png";
-import organizerIdle from "@/assets/characters/organizer/idle.png";
+import presentingMascot from "@/assets/main-mascot/presenting.png";
+import organizerIdle from "@/assets/main-mascot/idle.png";
 import starSticker from "@/assets/stickers/star.png";
 import washiTape from "@/assets/stickers/washi-tape.png";
 
