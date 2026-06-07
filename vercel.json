@@ -10,7 +10,8 @@
     },
     {
       "source": "/((?!api/).*)",
-      "destination": "/index.html"
+      "destination": "/client/index.html"
+    
     }
   ]
 }
