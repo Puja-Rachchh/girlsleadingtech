@@ -1,11 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
-import { GlassCard } from "@/components/site/GlassCard";
-import { SectionHeading } from "@/components/site/SectionHeading";
 import { Marquee } from "@/components/site/Marquee";
-import { SpeakerCard } from "@/components/site/SpeakerCard";
-import { ArrowRight, Heart, Users, Sparkle, Star, Flower2, Linkedin } from "lucide-react";
 import FAQ from "@/components/site/FAQ";
 import { stats } from "@/data/stats";
 import { initiatives } from "@/data/initiatives";
@@ -14,16 +10,18 @@ import { communityPartners, industryPartners, ecosystemPartners } from "@/data/p
 import { useState } from "react";
 import { colleges } from "@/data/colleges";
 import testimonialCard from "@/assets/testimonial-card.png"
-import LborderCard from "@/components/ui/LborderCard";
 import { WhyJoinUs } from "@/components/home/WhyJoinUs";
+import LBorderCard from "@/components/shared/LBorderCard";
+import { InitiativesScrapbook } from "./initiatives";
 import pixelBtn from "@/assets/pixel-button.png"
-import presenting from "@/assets/characters/main-mascot/presenting.png"
 import { TestimonialsGrid } from "@/components/home/TestimonialsGrid"
 import { PartnersSection } from "@/components/home/PartnersSection"
 import OurStory from "@/components/home/OurStory";
 import OurJourney from "@/components/home/OurJourney";
-import joinUs from "@/assets/characters/main-mascot/join-us.png"
-
+import { Heart, Sparkle, Star } from "lucide-react";
+import VerticalMarquee from "@/components/home/VerticalMarquee";
+import joinUs from "@/assets/main-mascot/join-us.png"
+import GridBackground from "@/components/shared/GridBackground";
 
 import gallery1 from "@/assets/gallery-1.webp";
 import gallery2 from "@/assets/gallery-2.webp";
@@ -184,88 +182,8 @@ useEffect(() => {
   );
 }
 
-function TestimonialPixelBackground() {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d")!;
-    ctx.imageSmoothingEnabled = false;
-
-    const resize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-      draw();
-    };
-
-    const draw = () => {
-      const { width, height } = canvas;
-      ctx.clearRect(0, 0, width, height);
-      const grid = 28;
-      for (let x = 0; x < width; x += grid) {
-        for (let y = 0; y < height; y += grid) {
-          ctx.fillStyle = "rgba(180, 55, 120, 0.18)";
-          ctx.fillRect(x, y, 2.5, 2.5);
-        }
-      }
-    };
-
-    resize();
-    window.addEventListener("resize", resize);
-    return () => window.removeEventListener("resize", resize);
-  }, []);
-
-  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full -z-10" />;
-}
 
 
-{/* grid bg */}
-function GridBackground() {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      
-      {/* LEFT GLOW (unchanged) */}
-      <div
-        className="absolute left-[-12%] top-[-10%] h-[120%] w-[35vw] blur-3xl opacity-80"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(255,120,180,0.28), transparent 75%)",
-        }}
-      />
-
-      {/* RIGHT GLOW (unchanged) */}
-      <div
-        className="absolute right-[-12%] top-[-10%] h-[120%] w-[35vw] blur-3xl opacity-80"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(240,120,255,0.24), transparent 75%)",
-        }}
-      />
-
-      {/* CENTER CREAM GLOW (unchanged) */}
-      <div
-        className="absolute left-1/2 top-1/2 h-[30rem] w-[50rem] -translate-x-1/2 -translate-y-1/2 blur-3xl"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(255,240,190,0.28), transparent 72%)",
-        }}
-      />
-
-      {/* GRID LAYER (added on top but subtle so it doesn't kill glow) */}
-      <div
-        className="absolute inset-0 opacity-60"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(72, 38, 96, 0.13) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(160, 100, 200, 0.13) 1px, transparent 1px)
-          `,
-          backgroundSize: "22px 22px",
-        }}
-      />
-    </div>
-  );
-}
 
 
 // -------- HOME PAGE --------
@@ -298,6 +216,111 @@ function HomePage() {
       <section className="relative py-24 pb-12 overflow-hidden bg-[#FFFBF7]">
         <GridBackground />
         <OurStory />
+
+        <div className="relative container mx-auto max-w-6xl px-6">
+
+          {/* Cards */}
+    <div className="grid gap-6 md:grid-cols-2">
+
+      {/* VISION */}
+      <motion.div
+        initial={{
+          opacity: 0,
+          x: -70,
+          y: -80,
+          rotate: -3,
+          scale: 0.92,
+        }}
+        whileInView={{
+          opacity: 1,
+          x: 0,
+          y: 0,
+          rotate: 0,
+          scale: 1,
+        }}
+    
+        viewport={{
+          once: true,
+          amount: 0.6,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 90,
+          damping: 18,
+          delay: 0.1,
+        }}
+      >
+        <LBorderCard>
+
+          <h3
+            className="text-2xl font-bold text-[#d955a4]"
+            style={{
+              fontFamily: "'Press Start 2P', monospace",
+            }}
+          >
+            Our Vision
+          </h3>
+
+          <p className="mt-4 font-sans text-black leading-relaxed">
+            A world where every girl who dreams in code, design or data
+            has a community, a mentor and a runway to lead.
+            No gatekeeping. Just glow-ups.
+          </p>
+
+        </LBorderCard>
+      </motion.div>
+
+      {/* MISSION */}
+      <motion.div
+        initial={{
+          opacity: 0,
+          x: 70,
+          y: 80,
+          rotate: 3,
+          scale: 0.92,
+        }}
+        whileInView={{
+          opacity: 1,
+          x: 0,
+          y: 0,
+          rotate: 0,
+          scale: 1,
+        }}
+ 
+      
+        viewport={{
+          once: true,
+          amount: 0.6,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 90,
+          damping: 18,
+          delay: 0.2,
+        }}
+      >
+        <LBorderCard>
+
+          <h3
+            className="text-2xl font-bold text-[#d955a4]"
+            style={{
+              fontFamily: "'Press Start 2P', monospace",
+            }}
+          >
+            Our Mission
+          </h3>
+
+          <p className="mt-4 font-sans text-black leading-relaxed">
+            To equip 100,000 women in tech across India with the
+            resources, mentorship and confidence to ship the products
+            and lead the teams of tomorrow.
+          </p>
+
+              </LBorderCard>
+            </motion.div>
+
+          </div>
+        </div>
       </section>
 
       {/* OUR JOURNEY TIMELINE */}
