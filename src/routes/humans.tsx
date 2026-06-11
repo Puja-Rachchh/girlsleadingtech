@@ -307,71 +307,7 @@ function HumansPage() {
             <TeamShowcase filteredTeam={filteredTeam} />
           ) : tab === "speakers" ? (
             <>
-              {/* MEET THE SPEAKERS HEADER */}
-              <div className="mb-12">
-                <style>{`
-                  @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-                `}</style>
-                <div className="relative inline-block">
-                  <h2
-                    className="
-                      font-['Anton']
-                      uppercase
-                      text-black
-                      leading-none
-                      tracking-[-0.02em]
-                      select-none
-                      pointer-events-none
-                      text-5xl
-                      sm:text-6xl
-                      md:text-7xl
-                      lg:text-8xl
-                      relative
-                      z-0
-                    "
-                  >
-                    MEET
-                  </h2>
-
-                  {/* PINK LABEL */}
-                  <div
-                    className="
-                      absolute
-                      z-10
-                      bottom-[5%]
-                      right-[-12%]
-                      sm:right-[-15%]
-                      md:right-[-18%]
-                      lg:right-[-22%]
-                      rotate-[-8deg]
-                      bg-[#d955a4]
-                      px-3
-                      sm:px-4
-                      md:px-5
-                      py-1
-                      shadow-lg
-                      whitespace-nowrap
-                    "
-                  >
-                    <span
-                      className="
-                        font-['Anton']
-                        uppercase
-                        text-black
-                        leading-none
-                        text-base
-                        sm:text-lg
-                        md:text-xl
-                        lg:text-2xl
-                      "
-                    >
-                      THE SPEAKERS
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {filteredSpeakers.map((s, i) => (
                   <MemberProfileCard
                     key={s.id}
@@ -395,71 +331,7 @@ function HumansPage() {
             </>
           ) : (
             <>
-              {/* MEET THE [SECTION] HEADER */}
-              <div className="mb-12">
-                <style>{`
-                  @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-                `}</style>
-                <div className="relative inline-block">
-                  <h2
-                    className="
-                      font-['Anton']
-                      uppercase
-                      text-black
-                      leading-none
-                      tracking-[-0.02em]
-                      select-none
-                      pointer-events-none
-                      text-5xl
-                      sm:text-6xl
-                      md:text-7xl
-                      lg:text-8xl
-                      relative
-                      z-0
-                    "
-                  >
-                    MEET
-                  </h2>
-
-                  {/* PINK LABEL */}
-                  <div
-                    className="
-                      absolute
-                      z-10
-                      bottom-[5%]
-                      right-[-12%]
-                      sm:right-[-15%]
-                      md:right-[-18%]
-                      lg:right-[-22%]
-                      rotate-[-8deg]
-                      bg-[#d955a4]
-                      px-3
-                      sm:px-4
-                      md:px-5
-                      py-1
-                      shadow-lg
-                      whitespace-nowrap
-                    "
-                  >
-                    <span
-                      className="
-                        font-['Anton']
-                        uppercase
-                        text-black
-                        leading-none
-                        text-base
-                        sm:text-lg
-                        md:text-xl
-                        lg:text-2xl
-                      "
-                    >
-                      THE {tab === "mentors" ? "MENTORS" : tab === "contributors" ? "CONTRIBUTORS" : "VOLUNTEERS"}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {tab === "mentors" &&
                   filteredMentors.map((m, i) => (
                     <MemberProfileCard
