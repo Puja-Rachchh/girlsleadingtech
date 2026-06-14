@@ -154,9 +154,19 @@ function RoleModelsPage() {
               style={{ animationDelay: `${(idx % 12) * 0.04}s` }}
             >
               <div>
-                <span className="inline-block rounded-full bg-pink-100 text-pink-700 px-3 py-1 text-[10px] font-bold uppercase tracking-wider">
-                  {p.domain}
-                </span>
+                <div className="flex items-start gap-3">
+                  {p.image && (
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      loading="lazy"
+                      className="h-14 w-14 shrink-0 rounded-full border-2 border-black object-cover shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                    />
+                  )}
+                  <span className="inline-block rounded-full bg-pink-100 text-pink-700 px-3 py-1 text-[10px] font-bold uppercase tracking-wider self-center">
+                    {p.domain}
+                  </span>
+                </div>
                 
                 <h3 className="mt-4 font-display text-xl font-bold leading-tight text-gray-900 group-hover:text-[#d955a4] transition-colors">
                   {p.name}
