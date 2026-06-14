@@ -51,8 +51,8 @@ function PastEvents() {
     <section className="container mx-auto max-w-6xl px-6 py-14 pb-32">
       <div className="grid gap-x-6 gap-y-12 md:grid-cols-2 lg:grid-cols-3 pt-6">
         {list.map((e, idx) => {
-          const thumb = e.posterImage || youtubeThumb(e.youtubeLink) || undefined;
-          const speakerImg = getSpeakerImageByName(e.speakerName);
+          const thumb = e.posterImage || youtubeThumb(e.youtubeLink) || null;
+          const speakerImg = getSpeakerImageByName(e.speakerName) ?? null;
           return (
             <EventCard
               key={e.id}
