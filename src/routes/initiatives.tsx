@@ -64,7 +64,7 @@ function InitiativesPage() {
 
 const SCRAPBOOK_SLUGS = [
   "empowerher",
-  "i2p-fellowship",
+  "global-ai-buildathon",
   "hack-aura",
   "code-at-christmas",
 ];
@@ -104,7 +104,7 @@ const cardStyles: Record<
     ]
   },
 
-  "i2p-fellowship": {
+  "global-ai-buildathon": {
     bar: "bg-[#A9B7FF]",
     tagline: "text-[#4B57A8]",
     cta: "bg-[#A9B7FF] hover:bg-[#95A5F5]",
@@ -239,22 +239,37 @@ function ScrapbookCard({
               </p>
 
               <p
-                className={`mt-1.5 text-black leading-relaxed max-w-[92%] ${isWide ? "line-clamp-3" : "line-clamp-2"}`}
+                className={`mt-1.5 text-black leading-relaxed max-w-[92%] font-bold ${isWide ? "line-clamp-3" : "line-clamp-2"}`}
                 style={{
                   fontFamily: "'Press Start 2P', monospace",
-                  fontSize: "clamp(0.68rem, 0.78vw, 0.85rem)",
+                  fontSize: "clamp(0.78rem, 0.88vw, 0.95rem)",
+                  fontWeight: "bold",
                 }}
               >
                 {initiative.description}
               </p>
             </div>
 
-            <div
-              className={`mt-3 inline-flex items-center gap-1.5 self-start rounded-full ${s.cta} px-3.5 py-1.5 text-xs font-bold text-white transition group-hover:scale-105`}
-            >
-              Explore
-              <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
-            </div>
+            {initiative.url ? (
+              <div
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  window.open(initiative.url, "_blank", "noopener,noreferrer");
+                }}
+                className={`mt-3 inline-flex items-center gap-1.5 self-start rounded-full ${s.cta} px-3.5 py-1.5 text-xs font-bold text-white transition hover:scale-105 cursor-pointer`}
+              >
+                Explore
+                <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
+              </div>
+            ) : (
+              <div
+                className={`mt-3 inline-flex items-center gap-1.5 self-start rounded-full ${s.cta} px-3.5 py-1.5 text-xs font-bold text-white transition group-hover:scale-105`}
+              >
+                Explore
+                <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
+              </div>
+            )}
           </div>
         </div>
       </Link>
@@ -271,36 +286,56 @@ function ScrapbookCardMobile({
   const s = cardStyles[initiative.slug];
 
   return (
-    <div className="w-full max-w-[340px] h-[310px] rounded-none overflow-visible bg-white shadow-xl ring-1 ring-black/5 flex flex-col relative font-sans">
-      {/* Mobile Stickers */}
-      <div>
-        {s.mobileStickers}
-      </div>
-      <div className={`h-5 w-full ${s.bar}`} />
-
-      <div className="p-6 flex-1 flex flex-col justify-between">
-        <div className="flex flex-col gap-2 text-left">
-          <h3 className="text-2xl font-black uppercase leading-tight tracking-tight text-gray-900 pr-12 font-['Satoshi']">
-            {initiative.name}
-          </h3>
-
-          <p className={`font-['Montserrat'] text-[11px] font-extrabold tracking-[0.01em] ${s.tagline}`}>
-            {initiative.tagline}
-          </p>
-
-          <p className="mt-3 text-sm text-gray-600 leading-relaxed line-clamp-4">
-            {initiative.description}
-          </p>
+    <Link
+      to="/initiatives/$slug"
+      params={{ slug: initiative.slug }}
+      className="block w-full max-w-[340px] h-[310px]"
+    >
+      <div className="w-full h-full rounded-none overflow-visible bg-white shadow-xl ring-1 ring-black/5 flex flex-col relative font-sans">
+        {/* Mobile Stickers */}
+        <div>
+          {s.mobileStickers}
         </div>
+        <div className={`h-5 w-full ${s.bar}`} />
 
-        <div
-          className={`mt-4 inline-flex items-center gap-1.5 self-start rounded-full ${s.cta} px-4 py-2 text-xs font-bold text-white`}
-        >
-          Explore
-          <ArrowRight className="h-3.5 w-3.5" />
+        <div className="p-6 flex-1 flex flex-col justify-between">
+          <div className="flex flex-col gap-2 text-left">
+            <h3 className="text-2xl font-black uppercase leading-tight tracking-tight text-gray-900 pr-12 font-['Satoshi']">
+              {initiative.name}
+            </h3>
+
+            <p className={`font-['Montserrat'] text-[11px] font-extrabold tracking-[0.01em] ${s.tagline}`}>
+              {initiative.tagline}
+            </p>
+
+            <p className="mt-3 text-sm text-gray-600 leading-relaxed line-clamp-4">
+              {initiative.description}
+            </p>
+          </div>
+
+          {initiative.url ? (
+            <div
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                window.open(initiative.url, "_blank", "noopener,noreferrer");
+              }}
+              className={`mt-4 inline-flex items-center gap-1.5 self-start rounded-full ${s.cta} px-4 py-2 text-xs font-bold text-white transition hover:scale-105 cursor-pointer`}
+            >
+              Explore
+              <ArrowRight className="h-3.5 w-3.5" />
+            </div>
+          ) : (
+            <div
+              className={`mt-4 inline-flex items-center gap-1.5 self-start rounded-full ${s.cta} px-4 py-2 text-xs font-bold text-white`}
+            >
+              Explore
+              <ArrowRight className="h-3.5 w-3.5" />
+            </div>
+          )}
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
