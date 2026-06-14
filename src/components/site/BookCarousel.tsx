@@ -75,11 +75,20 @@ export function BookCarousel({ items }: { items: Resource[] }) {
         >
           {/* Simulated Book Cover */}
           <div className="relative aspect-[3/4] w-full overflow-hidden rounded-t-2xl shadow-xl z-10 transition-shadow group-hover:shadow-lavender">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-secondary/80 flex items-center justify-center p-6 text-center">
-               <h3 className="font-serif text-2xl text-white font-bold leading-tight drop-shadow-md">
-                 {book.title}
-               </h3>
-            </div>
+            {book.image ? (
+              <img
+                src={book.image}
+                alt={`${book.title} cover`}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            ) : (
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-secondary/80 flex items-center justify-center p-6 text-center">
+                <h3 className="font-serif text-2xl text-white font-bold leading-tight drop-shadow-md">
+                  {book.title}
+                </h3>
+              </div>
+            )}
             {/* Book spine effect */}
             <div className="absolute left-0 inset-y-0 w-4 bg-gradient-to-r from-black/40 to-transparent mix-blend-multiply" />
             <div className="absolute left-4 inset-y-0 w-px bg-white/20" />
