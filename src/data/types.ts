@@ -54,6 +54,7 @@ export interface Resource {
   author?: string;
   authorLinkedin?: string;
   description?: string;
+  image?: string;
 }
 
 export interface PersonToFollow {
