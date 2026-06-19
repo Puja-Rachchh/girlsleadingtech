@@ -6,7 +6,7 @@ const faqs = [
   {
     question: "What is Girls Leading Tech?",
     answer:
-      "Girls Leading Tech is a community built for people who are curious, ambitious, and excited about technology. Think learning, mentorship, collaboration, opportunities, and a space where ideas turn into impact.",
+      "Girls Leading Tech is a community built for girls who are curious, ambitious, and excited about technology. Think learning, mentorship, collaboration, opportunities, and a space where ideas turn into impact.",
   },
   {
     question: "Who can join Girls Leading Tech?",
