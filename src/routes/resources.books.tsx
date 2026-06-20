@@ -210,7 +210,7 @@ function BooksPage() {
                 {/* Full-bleed cover image */}
                 {book.image && (
                   <div
-                    className="relative w-full h-64 overflow-hidden rounded-t-[18px] border-b-2 border-black flex-shrink-0"
+                    className="relative w-full h-64 overflow-hidden rounded-t-[18px] border-b-2 border-black flex-shrink-0 bg-gray-50"
                   >
                     <img
                       src={book.image}
