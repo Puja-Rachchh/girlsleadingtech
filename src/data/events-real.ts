@@ -521,7 +521,7 @@ title: "STAR Method & Quantifying Impact"
 
     "youtubeLink": "https://youtu.be/ft-Y88hA1q8",
     "attendees": 97,
-    "summary": "This detailed summary covers a comprehensive workshop by Radhika Patwari (SDE at Uber, Ex-Google) on crafting high-impact resumes, specifically tailored for students and early-career professionals. 1.",
+    "summary": "Radhika Patwari shared a comprehensive guide to building industry-ready resumes for internships and placements. She covered resume structure, ATS optimization, project presentation, STAR methodology, quantifying impact, and common mistakes students make while applying for jobs. The session concluded with an interactive Q&A on resumes, career transitions, projects, and job applications.",
     "status": "past",
     "category": "Placements & Internships"
   },
@@ -560,7 +560,7 @@ title: "Bounties, SIH & Q&A"
 
     "youtubeLink": "https://youtu.be/c2zJxi8ByYA",
     "attendees": 119,
-    "summary": "This video features Mohit Bhat, a 50x hackathon winner and industry expert, sharing a comprehensive guide on how to successfully navigate and win hackathons. He breaks down the journey from a beginner's perspective to advanced strategies for international competitions.",
+    "summary": "Mohit shared his journey of winning 50+ hackathons and explained how students can use hackathons to learn new technologies, build strong resumes, gain internships, and network with industry professionals. The session covered hackathon types, team building, project ideation, winning strategies, hackathon platforms, and tips for national and international competitions. It concluded with an interactive Q&A on Smart India Hackathon, project evaluation, and Web3 opportunities",
     "status": "past",
     "category": "Hackathons"
   },
@@ -1455,11 +1455,35 @@ title: "Navigating Career Confusion & Finding Direction"
     "date": "2025-07-18",
     "duration": "2hrs 12mins 13s",
     "speakerName": "Shreya Mathur",
+
+    timestamps: [
+{
+time: "00:05:24",
+title: "Introduction & Speaker Journey"
+},
+{
+time: "00:12:30",
+title: "What is Machine Learning & AI Concepts"
+},
+{
+time: "00:18:58",
+title: "Supervised, Unsupervised & Reinforcement Learning"
+},
+{
+time: "00:36:51",
+title: "ML Workflow, Data Processing & Models"
+},
+{
+time: "01:12:34",
+title: "Projects, DSA & ML Career Guidance"
+}
+],
+
     "speakerLinkedin": "https://www.linkedin.com/in/shreya-mathur-0092b6257/",
     "speakerDesignation": "Amss",
     "speakerCompany": "Amazon",
     "youtubeLink": "https://www.youtube.com/watch?v=YYZ1pEmYnnk",
-    "summary": "This comprehensive session, titled Foundations of Machine Learning, is a beginner-oriented cohort workshop hosted by \"Girls Leading Tech\" and led by Shria Matur, an SD intern at Moisec Technologies and Amazon ML Summer School alumna. Below is a detailed summary of the key segment",
+    "summary": "Shreya Mathur introduced the fundamentals of Machine Learning, covering key AI concepts, types of learning, ML workflows, and real-world applications. The session focused on building intuition through practical examples rather than definitions, while also highlighting the importance of mathematics, Python, DSA, and project-based learning for aspiring ML engineers.",
     "status": "past",
     "category": "AI & Machine Learning"
   },
@@ -1688,7 +1712,7 @@ title: "Building an AI-Ready Profile & Student Advice"
 ],
 
     "youtubeLink": "https://www.youtube.com/watch?v=ZBUkkzDyyfw",
-    "summary": "This video features Dr. Mohit, a staff software engineer at Google and former researcher at NVIDIA, Microsoft, and IBM, discussing the evolving landscape of careers in the age of Generative AI (GenAI).",
+    "summary": "Dr. Mohit shared his unconventional career journey across multiple industries and explained how the AI revolution is reshaping jobs, skills, and career paths. He discussed the impact of GenAI on the workforce, emerging opportunities, essential future-ready skills, and how students can prepare for high-impact careers in AI. The session also covered AI-driven productivity, agentic workflows, and practical advice for building a strong professional profile.",
     "status": "past",
     "category": "Placements & Internships"
   },
@@ -1726,7 +1750,7 @@ title: "Career Advice, Research Skills & Q&A"
 ],
 
     "youtubeLink": "https://www.youtube.com/watch?v=0kv51pWPZ5w",
-    "summary": "This video features Disha Shrivastava, a Senior Research Scientist at Google DeepMind, who shares her extensive journey and professional insights into navigating a career in Machine Learning (ML) research. 1.",
+    "summary": "Disha Shivaswamy shared her journey from Electronics Engineering in India to becoming a Senior Research Scientist at Google DeepMind. She discussed transitioning into ML research, pursuing a PhD, overcoming research setbacks, and contributing to projects like AlphaCode and Gemini. The session also covered academic vs industry research, building impactful ML careers, research mindset, open-source contributions, and advice for aspiring researchers, especially women in AI.",
     "status": "past",
     "category": "AI & Machine Learning"
   },
@@ -2782,7 +2806,7 @@ title: "Hackathon Tips & Winning Strategies"
 ],
 
     "youtubeLink": "https://www.youtube.com/watch?v=AwdAeL9B1w4&pp=0gcJCdkKAYcqIYzv",
-    "summary": "The video \"Ship a Mini App in 45 Minutes: Vibe Coding with AI\" features Ramyashree, a Data Engineer at Radix, sharing her workflow for rapidly prototyping applications using AI. She introduces the concept of \"Vibe Coding\"—a style of building software by describing requirements in",
+    "summary": "Ramyashree shared a practical framework for building and shipping AI-assisted applications quickly using vibe coding. She explained how to move from an idea to a PRD, break work into small tasks, maintain context through devlogs, and avoid AI hallucinations. The session also covered tool selection, rapid prototyping workflows, and hackathon strategies focused on execution, storytelling, and shipping functional MVPs.",
     "status": "past",
     "category": "Core Engineering"
   },
@@ -3445,6 +3469,7 @@ title: "Hands-On Portfolio Builder Demo"
 
     posterImage:"/vibe.png",
     "youtubeLink": "https://youtu.be/zzBp4GQLgFc?si=qF3SbyzZ4QJ56PvK",
+    "summary": "Vrijraj Singh introduced the fundamentals of vibe coding and demonstrated how developers can leverage Google’s AI ecosystem, especially Gemini and Google Anti-Gravity, to build applications faster. The session covered prompt engineering, AI-assisted development workflows, rules, agent skills, MCP servers, and agentic browsers. Participants followed a hands-on workshop to create a portfolio website from their LinkedIn profile using AI agents and automation tools.",
     "status": "past",
     "category": "Core Engineering"
   }
