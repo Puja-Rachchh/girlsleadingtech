@@ -70,7 +70,3 @@ export const roleModels: RoleModel[] = [
   { id: "archana-priyadarshini-59", name: "Archana Priyadarshini", domain: "Web3 / Blockchain", summary: "Building decentralized degree verification so Indian students don't get exploited by fake credential mills. Very practical use of blockchain, not just hype.", role: "Co-Founder & CEO", company: "Doxzen", location: "Hyderabad India", image: "https://api.dicebear.com/9.x/initials/svg?seed=Archana%20Priyadarshini&backgroundColor=c9b99a,8b7355,e8c07a&textColor=ffffff&fontWeight=700&fontSize=42", linkedin: "https://www.linkedin.com/in/archana-priyadarshini" },
   { id: "richa-bhutoria-60", name: "Richa Bhutoria", domain: "Web3 / Blockchain", summary: "Grew Polygon's Indian developer community to 15,000+ people essentially by showing up, doing workshops, and being consistently helpful.", role: "Developer Relations Lead", company: "Polygon", location: "India", image: "https://api.dicebear.com/9.x/initials/svg?seed=Richa%20Bhutoria&backgroundColor=fecaca,f9a8a8,c44569&textColor=ffffff&fontWeight=700&fontSize=42", linkedin: "https://www.linkedin.com/in/richa-bhutoria" }
 ];
-
-  
-
-];
