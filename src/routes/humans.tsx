@@ -771,17 +771,18 @@ function HumansPage() {
                       />
                     ))}
                   {tab === "contributors" &&
-                    filteredContribs.map((m, i) => (
-                      <MemberProfileCard
-                        key={m.id}
-                        name={m.name}
-                        location={m.city && m.state ? `${m.city}, ${m.state}` : m.city || m.state}
-                        locationType="location"
-                        delay={i}
-                        linkedin={m.linkedin}
-                        image={m.image}
-                      />
-                    ))}
+  filteredContribs.map((m, i) => (
+    <MemberProfileCard
+      key={m.id}
+      name={m.name}
+      location={m.city && m.state ? `${m.city}, ${m.state}` : m.city || m.state}
+      locationType="location"
+      delay={i}
+      linkedin={m.linkedin}
+      image={m.image}
+      description={m.description}
+    />
+  ))}
                   {tab === "volunteers" &&
                     filteredVolunteers.map((m, i) => (
                       <MemberProfileCard
