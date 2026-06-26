@@ -154,9 +154,6 @@ Looking for a place to start? Here are the types of contributions we always need
 GLT is a community first. If you're contributing code, you're welcome in our spaces.
 
 [![Newsletter](https://img.shields.io/badge/Newsletter-Substack-d955a4?style=flat-square&labelColor=0a0a0a)](https://girlsintech.substack.com)
-[![Discord](https://img.shields.io/badge/Community-Discord-5b2b4a?style=flat-square&logo=discord&logoColor=white&labelColor=0a0a0a)](#)
-
-> **HackAura** — our flagship 24hr virtual hackathon — saw 1,700+ hackers, 400+ teams, and 150+ projects shipped. The next one is coming.
 
 <br/>
 
