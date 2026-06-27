@@ -145,8 +145,8 @@ export function PartnersSection({
         >
           <img
             src={pixelBtn}
-            alt="See All Partners"
-            className="w-[160px] sm:w-[180px] md:w-[200px] lg:w-[220px] h-auto object-contain"
+            alt="See all partners"
+            className="w-[160px] sm:w-[180px] md:w-[200px] lg:w-[260px] h-auto object-contain"
           />
 
           <span
@@ -163,8 +163,8 @@ export function PartnersSection({
               lineHeight: "1",
             }}
           >
-            See All <br className="sm:hidden" />
-            Partners →
+            See all <br className="sm:hidden" />
+            partners →
           </span>
         </Link>
       </div>

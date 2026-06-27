@@ -699,8 +699,8 @@ function HomeInitiativesSectionShell() {
           >
             <img
               src={pixelBtn}
-              alt="See All Initiatives"
-              className="w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] h-auto object-contain"
+              alt="See all initiatives"
+              className="w-[140px] sm:w-[160px] md:w-[180px] lg:w-[260px] h-auto object-contain"
             />
             <span
               className="absolute inset-0 flex items-center justify-center text-black text-center font-bold pointer-events-none"
@@ -711,8 +711,8 @@ function HomeInitiativesSectionShell() {
                 lineHeight: "1.0",
               }}
             >
-              See All <br className="sm:hidden" />
-              Initiatives →
+              See all <br className="sm:hidden" />
+              initiatives →
             </span>
           </Link>
         </div>

@@ -76,7 +76,7 @@ function EventsLayout() {
         .ticker-run {
           display: flex;
           width: 200%;
-          animation: ticker 28s linear infinite;
+          animation: ticker 30s linear infinite;
         }
       `}</style>
   

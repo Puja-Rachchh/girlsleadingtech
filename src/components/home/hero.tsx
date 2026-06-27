@@ -327,10 +327,10 @@ export default function Hero() {
 
             <img
               src={pixelBtn}
-              alt="Join Community Button"
+              alt="Join community Button"
               className="w-[140px]
               sm:w-[180px]
-              md:w-[210px]
+              md:w-[215px]
               h-auto h-auto"
             />
 
@@ -343,7 +343,7 @@ export default function Hero() {
             letterSpacing: "0.08em",
            }}
            >
-            Join Community →
+            Join community →
           </span>
         </Link>
 

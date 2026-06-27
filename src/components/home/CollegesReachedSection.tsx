@@ -119,8 +119,8 @@ function DesktopCollegesContent() {
           >
             <img
               src={pixelBtn}
-              alt="See All Colleges"
-              className="w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] h-auto object-contain"
+              alt="See all colleges"
+              className="w-[140px] sm:w-[160px] md:w-[180px] lg:w-[250px] h-auto object-contain"
             />
             <span
               className="absolute inset-0 flex items-center justify-center text-black text-center font-bold pointer-events-none"
@@ -131,8 +131,8 @@ function DesktopCollegesContent() {
                 lineHeight: "1.0",
               }}
             >
-              See All <br className="sm:hidden" />
-              Colleges →
+              See all <br className="sm:hidden" />
+              colleges →
             </span>
           </Link>
         </div>
@@ -197,7 +197,7 @@ export default function CollegesReachedSection() {
             >
               <img
                 src={pixelBtn}
-                alt="See All Colleges"
+                alt="See all colleges"
                 className="w-[160px] sm:w-[180px] h-auto object-contain"
               />
               <span
@@ -208,7 +208,7 @@ export default function CollegesReachedSection() {
                   letterSpacing: "0.06em",
                 }}
               >
-                See All Colleges →
+                See all colleges →
               </span>
             </Link>
           </div>
