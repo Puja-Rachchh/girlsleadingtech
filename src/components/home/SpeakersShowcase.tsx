@@ -159,7 +159,7 @@ export default function SpeakersShowcase() {
         >
     <img
       src={pixelBtn}
-      alt="See More Speakers"
+      alt="See more speakers"
       className="
         w-[160px]
         sm:w-[160px]
@@ -185,7 +185,7 @@ export default function SpeakersShowcase() {
           lineHeight: "1",
         }}
       >
-        See More Speakers →
+        See more speakers →
       </span>
     </Link>
   </div>

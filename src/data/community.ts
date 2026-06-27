@@ -487,7 +487,7 @@ export const contributors: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/suzanne-daniel-thomas/",
     image: img_contrib_suzanne_daniel_thomas,
     description:
-      "Researched similar platforms and shared suggestions for website improvements."
+      "Researched similar platforms and shared suggestions for website improvements. Helped in further UI enhancement features."
   },
 
   {
